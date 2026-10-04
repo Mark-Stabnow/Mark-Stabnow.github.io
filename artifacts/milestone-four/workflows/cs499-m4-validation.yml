@@ -1,0 +1,32 @@
+name: CS 499 - Milestone Four database verification
+on:
+  workflow_dispatch:
+    inputs:
+      project_directory:
+        description: Directory containing compose.verify.yml
+        required: true
+        default: capstone/warehouse-pwa
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Run the isolated database suite
+        working-directory: ${{ inputs.project_directory }}
+        run: docker compose -f compose.verify.yml up --build --abort-on-container-exit --exit-code-from verify
+      - name: Keep verification evidence even after a failed check
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cs499-m4-verification
+          path: ${{ inputs.project_directory }}/verification-results/
+          if-no-files-found: warn
+      - name: Remove the separate test stack
+        if: always()
+        working-directory: ${{ inputs.project_directory }}
+        run: docker compose -f compose.verify.yml down

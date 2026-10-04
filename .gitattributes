@@ -1,0 +1,9 @@
+# Keep the published artifact bytes and checksum manifest stable on Windows.
+# Convert only executable shell scripts to LF for Docker and Gradle.
+* -text
+*.sh text eol=lf
+gradlew text eol=lf
+*.png binary
+*.webp binary
+*.jar binary
+*.docx binary

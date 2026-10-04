@@ -1,0 +1,18 @@
+{
+  "modifiedApplicationFiles": [
+    "client/App.tsx",
+    "client/IndexedInventoryView.tsx",
+    "client/styles.css",
+    "tests/browser.spec.ts"
+  ],
+  "preservedFileCount": 156,
+  "preservedAreas": [
+    "original Android",
+    "Milestone Three baseline",
+    "server",
+    "db",
+    "shared algorithms",
+    "tools",
+    "environment and package/Compose configuration"
+  ]
+}

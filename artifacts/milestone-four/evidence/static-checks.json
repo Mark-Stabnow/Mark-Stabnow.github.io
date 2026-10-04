@@ -1,0 +1,10 @@
+{
+  "javascriptFilesSyntaxChecked": 30,
+  "javascriptSyntax": "PASS",
+  "bashSyntax": "PASS",
+  "packageJsonAndLockfileParse": "PASS",
+  "composeAndWorkflowYamlParse": "PASS",
+  "sqlExecuted": false,
+  "typescriptBuildExecuted": false,
+  "note": "Syntax and parsing checks do not execute PostgreSQL, build Docker images or validate browser behavior."
+}

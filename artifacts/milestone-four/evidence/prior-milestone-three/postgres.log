@@ -1,0 +1,122 @@
+
+> warehouse-inventory-capstone@1.0.0 test:db
+> node --test tests/database.test.mjs
+
+TAP version 13
+# Subtest: an item, opening stock record, and audit entry are saved together
+ok 1 - an item, opening stock record, and audit entry are saved together
+  ---
+  duration_ms: 22.990969
+  type: 'test'
+  ...
+# Subtest: the database rejects duplicate SKUs
+ok 2 - the database rejects duplicate SKUs
+  ---
+  duration_ms: 9.420476
+  type: 'test'
+  ...
+# Subtest: stock changes append history and keep the balance correct
+ok 3 - stock changes append history and keep the balance correct
+  ---
+  duration_ms: 11.076342
+  type: 'test'
+  ...
+# Subtest: replaying one request does not apply it twice
+ok 4 - replaying one request does not apply it twice
+  ---
+  duration_ms: 7.956378
+  type: 'test'
+  ...
+# Subtest: concurrent copies of the same request are applied once
+ok 5 - concurrent copies of the same request are applied once
+  ---
+  duration_ms: 39.621285
+  type: 'test'
+  ...
+# Subtest: reusing a request ID with different content is rejected
+ok 6 - reusing a request ID with different content is rejected
+  ---
+  duration_ms: 9.64679
+  type: 'test'
+  ...
+# Subtest: two users cannot spend the same remaining stock
+ok 7 - two users cannot spend the same remaining stock
+  ---
+  duration_ms: 8.078689
+  type: 'test'
+  ...
+# Subtest: an overdraw leaves both balance and history unchanged
+ok 8 - an overdraw leaves both balance and history unchanged
+  ---
+  duration_ms: 6.922301
+  type: 'test'
+  ...
+# Subtest: an audit write failure rolls the whole stock change back
+ok 9 - an audit write failure rolls the whole stock change back
+  ---
+  duration_ms: 14.646811
+  type: 'test'
+  ...
+# Subtest: the running app cannot edit or delete stock history
+ok 10 - the running app cannot edit or delete stock history
+  ---
+  duration_ms: 5.301874
+  type: 'test'
+  ...
+# Subtest: the running app cannot rewrite audit history
+ok 11 - the running app cannot rewrite audit history
+  ---
+  duration_ms: 86.834803
+  type: 'test'
+  ...
+# Subtest: a stale edit is rejected after another change
+ok 12 - a stale edit is rejected after another change
+  ---
+  duration_ms: 9.50117
+  type: 'test'
+  ...
+# Subtest: archiving keeps history and prevents new stock changes
+ok 13 - archiving keeps history and prevents new stock changes
+  ---
+  duration_ms: 14.114964
+  type: 'test'
+  ...
+# Subtest: the stock balance agrees with the sum of its ledger
+ok 14 - the stock balance agrees with the sum of its ledger
+  ---
+  duration_ms: 9.588557
+  type: 'test'
+  ...
+# Subtest: keyset pages do not repeat records in a stable dataset
+ok 15 - keyset pages do not repeat records in a stable dataset
+  ---
+  duration_ms: 6.377961
+  type: 'test'
+  ...
+# Subtest: migration can run again without losing existing stock
+ok 16 - migration can run again without losing existing stock
+  ---
+  duration_ms: 66.838552
+  type: 'test'
+  ...
+# Subtest: expired sessions cannot authenticate
+ok 17 - expired sessions cannot authenticate
+  ---
+  duration_ms: 4.352088
+  type: 'test'
+  ...
+# Subtest: five failed logins put an account into a timed lockout
+ok 18 - five failed logins put an account into a timed lockout
+  ---
+  duration_ms: 5.413591
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 545.544634

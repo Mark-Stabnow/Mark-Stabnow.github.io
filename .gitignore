@@ -1,0 +1,53 @@
+# Private runtime settings (keep only the template)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+.npmrc
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+.gradle/
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+local.properties
+.DS_Store
+Thumbs.db
+~$*
+
+# Local databases, backups, exports, and test-run output
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.dump
+*.backup
+*.bak
+backups/
+exports/
+imports/
+import-report.json
+verification-results/
+playwright-report/
+test-results/
+benchmark-results/
+*.log
+
+# Do not accidentally publish a private hand-in archive
+*.zip
+*.7z
+*.tar
+*.gz
+
+# These are curated, historical capstone evidence, not live run output
+!artifacts/milestone-four/evidence/**/*.log

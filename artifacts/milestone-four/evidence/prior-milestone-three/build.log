@@ -1,0 +1,14 @@
+
+> warehouse-inventory-capstone@1.0.0 build
+> tsc --noEmit && vite build && node tools/build-sw.mjs
+
+[36mvite v7.3.6 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 34 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/[22m[32mindex.html                 [39m[1m[2m  0.59 kB[22m[1m[22m[2m │ gzip:  0.37 kB[22m
+[2mdist/[22m[2massets/[22m[35mindex-C94_Rfzq.css  [39m[1m[2m  5.89 kB[22m[1m[22m[2m │ gzip:  1.89 kB[22m
+[2mdist/[22m[2massets/[22m[36mindex-DcKDISMR.js   [39m[1m[2m247.11 kB[22m[1m[22m[2m │ gzip: 77.36 kB[22m
+[32m✓ built in 992ms[39m
+Built the service worker for this app version.

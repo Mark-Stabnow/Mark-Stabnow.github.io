@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sms_permission_granted">SMS permission granted.</string>
+    <string name="current_response_sms_alerts_are_enabled">Current response: SMS alerts are enabled.</string>
+    <string name="back">Back</string>
+</resources>

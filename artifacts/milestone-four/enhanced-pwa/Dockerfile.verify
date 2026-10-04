@@ -1,0 +1,15 @@
+# Separate test image. Does not change the normal app image or its data volume.
+FROM node:22-bookworm AS node-runtime
+FROM postgres:17-bookworm
+COPY --from=node-runtime /usr/local/bin/node /usr/local/bin/node
+COPY --from=node-runtime /usr/local/lib/node_modules /usr/local/lib/node_modules
+RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
+ && ln -s /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \
+ && apt-get update && apt-get install -y --no-install-recommends python3 ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund && npx playwright install --with-deps chromium
+COPY . .
+ENTRYPOINT []
+CMD ["bash", "tools/verify-all.sh"]

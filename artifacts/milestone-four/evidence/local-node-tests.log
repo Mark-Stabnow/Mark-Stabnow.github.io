@@ -1,0 +1,550 @@
+TAP version 13
+# Subtest: hash map reports missing keys and empty size
+ok 1 - hash map reports missing keys and empty size
+  ---
+  duration_ms: 2.196478
+  type: 'test'
+  ...
+# Subtest: hash map distinguishes a stored undefined value from a missing key
+ok 2 - hash map distinguishes a stored undefined value from a missing key
+  ---
+  duration_ms: 0.310094
+  type: 'test'
+  ...
+# Subtest: hash map replaces a value without increasing size
+ok 3 - hash map replaces a value without increasing size
+  ---
+  duration_ms: 0.119499
+  type: 'test'
+  ...
+# Subtest: hash map resolves deliberate collisions and deletion within a chain
+ok 4 - hash map resolves deliberate collisions and deletion within a chain
+  ---
+  duration_ms: 0.938697
+  type: 'test'
+  ...
+# Subtest: hash map grows and retains exactly 1,000 entries
+ok 5 - hash map grows and retains exactly 1,000 entries
+  ---
+  duration_ms: 6.71772
+  type: 'test'
+  ...
+# Subtest: hash map rejects invalid keys and capacities without corrupting entries
+ok 6 - hash map rejects invalid keys and capacities without corrupting entries
+  ---
+  duration_ms: 0.682778
+  type: 'test'
+  ...
+# Subtest: hash map treats prototype-like and empty strings as ordinary keys
+ok 7 - hash map treats prototype-like and empty strings as ordinary keys
+  ---
+  duration_ms: 0.21836
+  type: 'test'
+  ...
+# Subtest: hash map entries returns independent key-value pair arrays
+ok 8 - hash map entries returns independent key-value pair arrays
+  ---
+  duration_ms: 0.101354
+  type: 'test'
+  ...
+# Subtest: trie handles an empty structure and a missing prefix
+ok 9 - trie handles an empty structure and a missing prefix
+  ---
+  duration_ms: 1.08535
+  type: 'test'
+  ...
+# Subtest: trie matches a whole-field prefix rather than a substring
+ok 10 - trie matches a whole-field prefix rather than a substring
+  ---
+  duration_ms: 0.919222
+  type: 'test'
+  ...
+# Subtest: trie ignores case and surrounding spaces
+ok 11 - trie ignores case and surrounding spaces
+  ---
+  duration_ms: 0.398222
+  type: 'test'
+  ...
+# Subtest: trie preserves shared prefixes when removing another word
+ok 12 - trie preserves shared prefixes when removing another word
+  ---
+  duration_ms: 0.2103
+  type: 'test'
+  ...
+# Subtest: trie preserves different items with the same name
+ok 13 - trie preserves different items with the same name
+  ---
+  duration_ms: 0.09916
+  type: 'test'
+  ...
+# Subtest: trie deduplicates an ID matching both name and SKU
+ok 14 - trie deduplicates an ID matching both name and SKU
+  ---
+  duration_ms: 0.075537
+  type: 'test'
+  ...
+# Subtest: trie removal prunes unused branches and permits reinsertion
+ok 15 - trie removal prunes unused branches and permits reinsertion
+  ---
+  duration_ms: 0.184098
+  type: 'test'
+  ...
+# Subtest: trie accepts prototype-like text without inheriting object properties
+ok 16 - trie accepts prototype-like text without inheriting object properties
+  ---
+  duration_ms: 0.152974
+  type: 'test'
+  ...
+# Subtest: trie handles Unicode code points and long keys without recursive traversal
+ok 17 - trie handles Unicode code points and long keys without recursive traversal
+  ---
+  duration_ms: 0.641671
+  type: 'test'
+  ...
+# Subtest: heap handles empty and one-item cases
+ok 18 - heap handles empty and one-item cases
+  ---
+  duration_ms: 0.47245
+  type: 'test'
+  ...
+# Subtest: heap orders zero stock and uses SKU and ID to break ties
+ok 19 - heap orders zero stock and uses SKU and ID to break ties
+  ---
+  duration_ms: 0.415835
+  type: 'test'
+  ...
+# Subtest: heap moves stock increases downward and decreases upward
+ok 20 - heap moves stock increases downward and decreases upward
+  ---
+  duration_ms: 0.765262
+  type: 'test'
+  ...
+# Subtest: heap removes a middle node, root, last node, and unknown ID
+ok 21 - heap removes a middle node, root, last node, and unknown ID
+  ---
+  duration_ms: 0.190925
+  type: 'test'
+  ...
+# Subtest: heap top-k leaves the main heap and position index unchanged
+ok 22 - heap top-k leaves the main heap and position index unchanged
+  ---
+  duration_ms: 13.795899
+  type: 'test'
+  ...
+# Subtest: heap filters before counting results and still returns sorted matches
+ok 23 - heap filters before counting results and still returns sorted matches
+  ---
+  duration_ms: 26.402866
+  type: 'test'
+  ...
+# Subtest: heap validates count and comparator; zero count is empty
+ok 24 - heap validates count and comparator; zero count is empty
+  ---
+  duration_ms: 0.235861
+  type: 'test'
+  ...
+# Subtest: heap drains 1,000 deterministic items in the same order as sorting
+ok 25 - heap drains 1,000 deterministic items in the same order as sorting
+  ---
+  duration_ms: 48.162054
+  type: 'test'
+  ...
+# Subtest: heap keeps position and ordering invariants across 1,000 seeded mutations
+ok 26 - heap keeps position and ordering invariants across 1,000 seeded mutations
+  ---
+  duration_ms: 44.905397
+  type: 'test'
+  ...
+# Subtest: coordinated index returns exact SKU, prefix, and lowest confirmed stock
+ok 27 - coordinated index returns exact SKU, prefix, and lowest confirmed stock
+  ---
+  duration_ms: 0.672805
+  type: 'test'
+  ...
+# Subtest: coordinated index removes old name and SKU entries after an edit
+ok 28 - coordinated index removes old name and SKU entries after an edit
+  ---
+  duration_ms: 0.186003
+  type: 'test'
+  ...
+# Subtest: coordinated index rejects duplicate SKU before removing the previous item
+ok 29 - coordinated index rejects duplicate SKU before removing the previous item
+  ---
+  duration_ms: 0.142117
+  type: 'test'
+  ...
+# Subtest: coordinated index removes archived items from all structures
+ok 30 - coordinated index removes archived items from all structures
+  ---
+  duration_ms: 0.276906
+  type: 'test'
+  ...
+# Subtest: coordinated index permits reinsertion after removal
+ok 31 - coordinated index permits reinsertion after removal
+  ---
+  duration_ms: 0.111131
+  type: 'test'
+  ...
+# Subtest: coordinated index keeps a defensive frozen snapshot
+ok 32 - coordinated index keeps a defensive frozen snapshot
+  ---
+  duration_ms: 0.121046
+  type: 'test'
+  ...
+# Subtest: coordinated index rejects invalid records without replacing a valid one
+ok 33 - coordinated index rejects invalid records without replacing a valid one
+  ---
+  duration_ms: 0.430037
+  type: 'test'
+  ...
+# Subtest: coordinated index handles a name equal to its SKU without duplicate results
+ok 34 - coordinated index handles a name equal to its SKU without duplicate results
+  ---
+  duration_ms: 0.106463
+  type: 'test'
+  ...
+# Subtest: a fresh loaded-view index drops records absent from the new page
+ok 35 - a fresh loaded-view index drops records absent from the new page
+  ---
+  duration_ms: 0.086561
+  type: 'test'
+  ...
+# Subtest: 1,000-item fixture is deterministic and uses unique synthetic IDs and SKUs
+ok 36 - 1,000-item fixture is deterministic and uses unique synthetic IDs and SKUs
+  ---
+  duration_ms: 2.067704
+  type: 'test'
+  ...
+# Subtest: 1,000-item prefix results equal an equivalent normalized startsWith scan
+ok 37 - 1,000-item prefix results equal an equivalent normalized startsWith scan
+  ---
+  duration_ms: 11.857916
+  type: 'test'
+  ...
+# Subtest: 1,000-item exact-SKU results equal a normalized linear scan
+ok 38 - 1,000-item exact-SKU results equal a normalized linear scan
+  ---
+  duration_ms: 8.866115
+  type: 'test'
+  ...
+# Subtest: 1,000-item stock changes agree across lookup, prefix, and heap
+ok 39 - 1,000-item stock changes agree across lookup, prefix, and heap
+  ---
+  duration_ms: 9.634265
+  type: 'test'
+  ...
+# Subtest: 1,000 actual SQLite rows pass through the exporter and Node mapping without loss
+ok 40 - 1,000 actual SQLite rows pass through the exporter and Node mapping without loss
+  ---
+  duration_ms: 1586.538984
+  type: 'test'
+  ...
+# Subtest: original DBHelper fields map to the enhanced schema
+ok 41 - original DBHelper fields map to the enhanced schema
+  ---
+  duration_ms: 3.203852
+  type: 'test'
+  ...
+# Subtest: an exact 1,000-record export validates without expanding the dataset
+ok 42 - an exact 1,000-record export validates without expanding the dataset
+  ---
+  duration_ms: 9.189701
+  type: 'test'
+  ...
+# Subtest: empty import is rejected
+ok 43 - empty import is rejected
+  ---
+  duration_ms: 0.204707
+  type: 'test'
+  ...
+# Subtest: more than 1,000 records are rejected as one batch
+ok 44 - more than 1,000 records are rejected as one batch
+  ---
+  duration_ms: 7.359941
+  type: 'test'
+  ...
+# Subtest: a missing category is not silently invented
+ok 45 - a missing category is not silently invented
+  ---
+  duration_ms: 0.30177
+  type: 'test'
+  ...
+# Subtest: a missing reorder level is not silently invented
+ok 46 - a missing reorder level is not silently invented
+  ---
+  duration_ms: 0.199286
+  type: 'test'
+  ...
+# Subtest: SKU normalization is explicit in the report and raw source is retained
+ok 47 - SKU normalization is explicit in the report and raw source is retained
+  ---
+  duration_ms: 0.479013
+  type: 'test'
+  ...
+# Subtest: case-normalized duplicate SKUs reject the whole export
+ok 48 - case-normalized duplicate SKUs reject the whole export
+  ---
+  duration_ms: 0.303188
+  type: 'test'
+  ...
+# Subtest: duplicate original IDs reject the export
+ok 49 - duplicate original IDs reject the export
+  ---
+  duration_ms: 0.286404
+  type: 'test'
+  ...
+# Subtest: unsafe original numeric IDs are rejected rather than rounded
+ok 50 - unsafe original numeric IDs are rejected rather than rounded
+  ---
+  duration_ms: 0.337504
+  type: 'test'
+  ...
+# Subtest: negative quantities are rejected
+ok 51 - negative quantities are rejected
+  ---
+  duration_ms: 0.458964
+  type: 'test'
+  ...
+# Subtest: fractional quantities are rejected
+ok 52 - fractional quantities are rejected
+  ---
+  duration_ms: 0.122556
+  type: 'test'
+  ...
+# Subtest: numeric text is not silently converted to a quantity
+ok 53 - numeric text is not silently converted to a quantity
+  ---
+  duration_ms: 0.087017
+  type: 'test'
+  ...
+# Subtest: zero is a valid opening balance
+ok 54 - zero is a valid opening balance
+  ---
+  duration_ms: 0.092499
+  type: 'test'
+  ...
+# Subtest: an over-limit stock count is rejected
+ok 55 - an over-limit stock count is rejected
+  ---
+  duration_ms: 0.066298
+  type: 'test'
+  ...
+# Subtest: missing location is reported instead of guessed
+ok 56 - missing location is reported instead of guessed
+  ---
+  duration_ms: 0.063951
+  type: 'test'
+  ...
+# Subtest: null notes become empty notes but are preserved in provenance
+ok 57 - null notes become empty notes but are preserved in provenance
+  ---
+  duration_ms: 0.074629
+  type: 'test'
+  ...
+# Subtest: overlong notes are rejected, not truncated
+ok 58 - overlong notes are rejected, not truncated
+  ---
+  duration_ms: 0.130554
+  type: 'test'
+  ...
+# Subtest: original timestamp text is retained without assuming a timezone
+ok 59 - original timestamp text is retained without assuming a timezone
+  ---
+  duration_ms: 0.082688
+  type: 'test'
+  ...
+# Subtest: unexpected inventory fields are rejected
+ok 60 - unexpected inventory fields are rejected
+  ---
+  duration_ms: 0.071224
+  type: 'test'
+  ...
+# Subtest: incorrect export format is rejected
+ok 61 - incorrect export format is rejected
+  ---
+  duration_ms: 0.053073
+  type: 'test'
+  ...
+# Subtest: source hash is stable across row order and JSON property order
+ok 62 - source hash is stable across row order and JSON property order
+  ---
+  duration_ms: 0.278858
+  type: 'test'
+  ...
+# Subtest: a source quantity change changes the source fingerprint
+ok 63 - a source quantity change changes the source fingerprint
+  ---
+  duration_ms: 0.252832
+  type: 'test'
+  ...
+# Subtest: validation errors are reported before a database connection is requested
+ok 64 - validation errors are reported before a database connection is requested
+  ---
+  duration_ms: 0.672373
+  type: 'test'
+  ...
+# Subtest: SKU is normalized before saving
+ok 65 - SKU is normalized before saving
+  ---
+  duration_ms: 3.476871
+  type: 'test'
+  ...
+# Subtest: required item fields cannot be blank
+ok 66 - required item fields cannot be blank
+  ---
+  duration_ms: 2.505071
+  type: 'test'
+  ...
+# Subtest: a stock count cannot be negative
+ok 67 - a stock count cannot be negative
+  ---
+  duration_ms: 0.317235
+  type: 'test'
+  ...
+# Subtest: a stock count must be an integer
+ok 68 - a stock count must be an integer
+  ---
+  duration_ms: 0.339753
+  type: 'test'
+  ...
+# Subtest: a string is not silently accepted as a numeric stock count
+ok 69 - a string is not silently accepted as a numeric stock count
+  ---
+  duration_ms: 0.310548
+  type: 'test'
+  ...
+# Subtest: SKU rejects spaces and punctuation outside its allowed format
+ok 70 - SKU rejects spaces and punctuation outside its allowed format
+  ---
+  duration_ms: 0.308026
+  type: 'test'
+  ...
+# Subtest: notes have a length limit
+ok 71 - notes have a length limit
+  ---
+  duration_ms: 0.664717
+  type: 'test'
+  ...
+# Subtest: editing details cannot overwrite quantity
+ok 72 - editing details cannot overwrite quantity
+  ---
+  duration_ms: 0.41179
+  type: 'test'
+  ...
+# Subtest: stock adjustments need a nonzero change
+ok 73 - stock adjustments need a nonzero change
+  ---
+  duration_ms: 4.495932
+  type: 'test'
+  ...
+# Subtest: stock adjustments need a reason
+ok 74 - stock adjustments need a reason
+  ---
+  duration_ms: 0.952494
+  type: 'test'
+  ...
+# Subtest: negative stock adjustments are valid commands
+ok 75 - negative stock adjustments are valid commands
+  ---
+  duration_ms: 0.488701
+  type: 'test'
+  ...
+# Subtest: a missing or malformed request ID is rejected
+ok 76 - a missing or malformed request ID is rejected
+  ---
+  duration_ms: 0.248008
+  type: 'test'
+  ...
+# Subtest: page size is capped at 100
+ok 77 - page size is capped at 100
+  ---
+  duration_ms: 0.264877
+  type: 'test'
+  ...
+# Subtest: query objects cannot replace search text
+ok 78 - query objects cannot replace search text
+  ---
+  duration_ms: 0.14833
+  type: 'test'
+  ...
+# Subtest: the default page size is 25
+ok 79 - the default page size is 25
+  ---
+  duration_ms: 0.130163
+  type: 'test'
+  ...
+# Subtest: unknown stock filters are rejected
+ok 80 - unknown stock filters are rejected
+  ---
+  duration_ms: 0.193288
+  type: 'test'
+  ...
+# Subtest: password spaces are kept
+ok 81 - password spaces are kept
+  ---
+  duration_ms: 0.242333
+  type: 'test'
+  ...
+# Subtest: password length has upper and lower bounds
+ok 82 - password length has upper and lower bounds
+  ---
+  duration_ms: 0.217901
+  type: 'test'
+  ...
+# Subtest: password hashes use different salts and verify the right password
+ok 83 - password hashes use different salts and verify the right password
+  ---
+  duration_ms: 1676.779399
+  type: 'test'
+  ...
+# Subtest: the queue removes a command only after confirmation
+ok 84 - the queue removes a command only after confirmation
+  ---
+  duration_ms: 0.608488
+  type: 'test'
+  ...
+# Subtest: a lost response keeps the original request ID in the queue
+ok 85 - a lost response keeps the original request ID in the queue
+  ---
+  duration_ms: 0.368697
+  type: 'test'
+  ...
+# Subtest: an expired session pauses the queue
+ok 86 - an expired session pauses the queue
+  ---
+  duration_ms: 0.133557
+  type: 'test'
+  ...
+# Subtest: a rejected adjustment stays visible for review
+ok 87 - a rejected adjustment stays visible for review
+  ---
+  duration_ms: 0.201096
+  type: 'test'
+  ...
+# Subtest: one account cannot send another account's queued change
+ok 88 - one account cannot send another account's queued change
+  ---
+  duration_ms: 0.107098
+  type: 'test'
+  ...
+# Subtest: a failed local cache write does not discard a confirmed request
+ok 89 - a failed local cache write does not discard a confirmed request
+  ---
+  duration_ms: 0.172893
+  type: 'test'
+  ...
+# Subtest: an unconfirmed response does not count as success
+ok 90 - an unconfirmed response does not count as success
+  ---
+  duration_ms: 0.155546
+  type: 'test'
+  ...
+1..90
+# tests 90
+# suites 0
+# pass 90
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1932.874959
