@@ -1,0 +1,22 @@
+
+> warehouse-inventory-capstone@1.0.0 test:e2e
+> playwright test
+
+
+Running 13 tests using 1 worker
+
+  ✓   1 tests/browser.spec.ts:10:1 › manager can sign in and view the desktop inventory (1.2s)
+  ✓   2 tests/browser.spec.ts:13:1 › manager can add and edit an item; duplicate SKU is rejected (1.8s)
+  ✓   3 tests/browser.spec.ts:17:1 › stock changes update the confirmed count and show a history record (1.2s)
+  ✓   4 tests/browser.spec.ts:20:1 › an offline change survives reload and syncs after reconnection (1.5s)
+  ✓   5 tests/browser.spec.ts:26:1 › viewer controls and the API both block stock changes (1.1s)
+  ✓   6 tests/browser.spec.ts:30:1 › phone and tablet layouts keep their content inside the screen (1.2s)
+  ✓   7 tests/browser.spec.ts:33:1 › signing out ends the server session and clears this user's cached view (1.0s)
+  ✓   8 tests/browser.spec.ts:44:1 › loaded-view prefix and exact SKU tools distinguish local misses (1.3s)
+  ✓   9 tests/browser.spec.ts:53:1 › lowest-stock view rebuilds after a confirmed stock adjustment (1.6s)
+  ✓  10 tests/browser.spec.ts:64:1 › loaded-view indexes discard old names, old SKUs and archived records (1.3s)
+  ✓  11 tests/browser.spec.ts:76:1 › loaded-view tools work after offline reload and do not claim warehouse-wide results (1.1s)
+  ✓  12 tests/browser.spec.ts:82:1 › loading another page expands the exact-SKU index without pretending the first page was complete (1.8s)
+  ✓  13 tests/browser.spec.ts:94:1 › loaded-view controls fit a phone and do not grant a viewer write access (1.1s)
+
+  13 passed (18.4s)

@@ -1,0 +1,5 @@
+
+> warehouse-inventory-capstone@1.0.0 start
+> node server/index.mjs
+
+Warehouse app is listening on port 4173.

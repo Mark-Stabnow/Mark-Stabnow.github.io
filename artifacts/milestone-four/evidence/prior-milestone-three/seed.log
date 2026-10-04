@@ -1,0 +1,5 @@
+
+> warehouse-inventory-capstone@1.0.0 seed
+> node tools/seed.mjs
+
+Demo accounts and sample inventory are ready. Existing records were kept.

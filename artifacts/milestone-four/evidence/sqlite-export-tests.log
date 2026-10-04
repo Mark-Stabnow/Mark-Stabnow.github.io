@@ -1,0 +1,14 @@
+test_does_not_export_users_or_password_hashes (test_export_android.AndroidExportTests.test_does_not_export_users_or_password_hashes) ... ok
+test_does_not_replace_an_existing_export (test_export_android.AndroidExportTests.test_does_not_replace_an_existing_export) ... ok
+test_does_not_replace_the_database (test_export_android.AndroidExportTests.test_does_not_replace_the_database) ... ok
+test_exports_actual_sqlite_rows (test_export_android.AndroidExportTests.test_exports_actual_sqlite_rows) ... ok
+test_nonexistent_source_does_not_create_an_empty_database (test_export_android.AndroidExportTests.test_nonexistent_source_does_not_create_an_empty_database) ... ok
+test_preserves_exactly_one_thousand_records (test_export_android.AndroidExportTests.test_preserves_exactly_one_thousand_records) ... ok
+test_rejects_an_unrelated_schema (test_export_android.AndroidExportTests.test_rejects_an_unrelated_schema) ... ok
+test_rejects_over_limit_without_truncating (test_export_android.AndroidExportTests.test_rejects_over_limit_without_truncating) ... ok
+test_source_database_bytes_remain_unchanged (test_export_android.AndroidExportTests.test_source_database_bytes_remain_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.017s
+
+OK

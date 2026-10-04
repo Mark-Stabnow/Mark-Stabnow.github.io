@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:17-bookworm
+    environment:
+      POSTGRES_DB: warehouse
+      POSTGRES_USER: warehouse_owner
+      POSTGRES_PASSWORD: ${OWNER_DB_PASSWORD:?Run npm run setup first}
+    ports: ["127.0.0.1:5432:5432"]
+    volumes: ["warehouse-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U warehouse_owner -d warehouse"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+  migrate:
+    build: .
+    env_file: .env
+    environment:
+      OWNER_DATABASE_URL: postgresql://warehouse_owner:${OWNER_DB_PASSWORD}@db:5432/warehouse
+      DATABASE_URL: postgresql://warehouse_app:${APP_DB_PASSWORD}@db:5432/warehouse
+    command: ["sh", "-c", "npm run migrate && npm run seed"]
+    depends_on:
+      db: {condition: service_healthy}
+  app:
+    build: .
+    # The running app never receives the database owner's password.
+    environment:
+      DATABASE_URL: postgresql://warehouse_app:${APP_DB_PASSWORD}@db:5432/warehouse
+      APP_ORIGIN: ${APP_ORIGIN:-http://localhost:4173}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      TRUST_PROXY: ${TRUST_PROXY:-false}
+    ports: ["127.0.0.1:4173:4173"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+volumes:
+  warehouse-data:

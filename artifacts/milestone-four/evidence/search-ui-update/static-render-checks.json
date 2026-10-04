@@ -1,0 +1,55 @@
+{
+  "syntax": [
+    {
+      "file": "client/App.tsx",
+      "syntax": "passed"
+    },
+    {
+      "file": "client/IndexedInventoryView.tsx",
+      "syntax": "passed"
+    },
+    {
+      "file": "tests/browser.spec.ts",
+      "syntax": "passed"
+    }
+  ],
+  "staticRenderChecks": [
+    {
+      "state": "collapsed",
+      "expectedItems": 5,
+      "renderedItems": 5,
+      "result": "passed"
+    },
+    {
+      "state": "expanded",
+      "expectedItems": 5,
+      "renderedItems": 5,
+      "result": "passed"
+    },
+    {
+      "state": "prefix",
+      "expectedItems": 2,
+      "renderedItems": 2,
+      "result": "passed"
+    },
+    {
+      "state": "exact",
+      "expectedItems": 1,
+      "renderedItems": 1,
+      "result": "passed"
+    },
+    {
+      "state": "lowest",
+      "expectedItems": 5,
+      "renderedItems": 5,
+      "result": "passed"
+    },
+    {
+      "state": "empty",
+      "expectedItems": 0,
+      "renderedItems": 0,
+      "result": "passed"
+    }
+  ],
+  "limitations": "JSX rendered with fixed hook values. These checks do not execute the React runtime, API, Docker build or database."
+}

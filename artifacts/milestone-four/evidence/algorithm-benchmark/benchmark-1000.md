@@ -1,0 +1,23 @@
+# 1,000-item benchmark
+
+Generated: 2026-10-04T19:25:17.869Z
+
+Node v22.16.0; linux/x64; INTEL(R) XEON(R) PLATINUM 8573C. Seed 499003.
+
+All values are **milliseconds per complete batch**, not per operation. 3 warmup batches and 15 measured batches; order alternates. Smaller values are faster for that batch.
+
+| Task | Operations / batch | Baseline median | Indexed median | Baseline p95 | Indexed p95 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Build read model | 1 | 0.049 | 3.608 | 1.817 | 4.887 |
+| Prefix search | 200 | 3.801 | 6.457 | 5.438 | 9.160 |
+| Exact SKU lookup | 200 | 1.025 | 0.028 | 1.174 | 0.061 |
+| Lowest 10 stock | 200 | 38.769 | 1.860 | 48.006 | 3.262 |
+| 100 stock updates | 100 | 0.360 | 0.398 | 0.518 | 0.935 |
+
+Baseline: normalized array scan for prefix/SKU; copy-and-sort for lowest 10. Indexed: custom trie, hash map and non-destructive min-heap traversal. Build compares a normalized array with all coordinated indexes. The update row compares 100 linear record replacements with 100 coordinated index updates. Each update batch starts from a fresh 1,000-item fixture prepared outside its timer.
+
+Equivalent prefix, exact, lowest-stock and update results checked before timing.
+
+Synthetic in-memory microbenchmark on 1,000 items. No network, database, DOM or physical-device timings. Heap top-10 is unfiltered. Memory not measured. CPU scheduling, JIT and GC can affect results. One dataset size does not demonstrate scaling.
+
+Raw samples, dataset hash and code hashes are in benchmark-1000.json.

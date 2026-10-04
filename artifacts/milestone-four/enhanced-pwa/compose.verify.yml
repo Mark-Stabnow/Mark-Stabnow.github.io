@@ -1,0 +1,39 @@
+name: cs499-m4-verification
+services:
+  test-db:
+    image: postgres:17-bookworm
+    environment:
+      POSTGRES_USER: warehouse_owner
+      POSTGRES_PASSWORD: disposable-owner-only
+      POSTGRES_DB: warehouse_test
+    # No host port and no named/persistent volume; this is not the working app DB.
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U warehouse_owner -d warehouse_test"]
+      interval: 2s
+      timeout: 5s
+      retries: 30
+  verify:
+    build:
+      context: .
+      dockerfile: Dockerfile.verify
+    environment:
+      OWNER_DATABASE_URL: postgresql://warehouse_owner:disposable-owner-only@test-db:5432/warehouse_test
+      DATABASE_URL: postgresql://warehouse_app:disposable-app-only@test-db:5432/warehouse_test
+      QUERY_OWNER_DATABASE_URL: postgresql://warehouse_owner:disposable-owner-only@test-db:5432/warehouse_query_test
+      UPGRADE_OWNER_DATABASE_URL: postgresql://warehouse_owner:disposable-owner-only@test-db:5432/warehouse_upgrade_test
+      RECOVERY_OWNER_DATABASE_URL: postgresql://warehouse_owner:disposable-owner-only@test-db:5432/warehouse_recovery_test
+      ALLOW_TEST_DB: "yes"
+      DEMO_MANAGER_PASSWORD: DisposableManager499!
+      DEMO_CLERK_PASSWORD: DisposableClerk499!
+      DEMO_VIEWER_PASSWORD: DisposableViewer499!
+      APP_ORIGIN: http://localhost:4173
+      COOKIE_SECURE: "false"
+      TRUST_PROXY: "false"
+      EVIDENCE_DIR: /evidence
+    volumes:
+      - ./verification-results:/evidence
+    depends_on:
+      test-db:
+        condition: service_healthy

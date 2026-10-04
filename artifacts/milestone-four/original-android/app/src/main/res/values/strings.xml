@@ -1,0 +1,112 @@
+<resources>
+    <string name="app_name">Warehouse Inventory</string>
+    <string name="app_name_caps">WAREHOUSE INVENTORY</string>
+    <string name="back_symbol">&lt;</string>
+    <string name="login_subtitle">
+        Sign in to manage inventory, or create an account if this is your first visit.</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="create_account">Create Account</string>
+    <string name="new_users_can_create_account">
+        New users can create an account from this screen.</string>
+    <string name="please_enter_both_username_and_password">
+        Please enter both username and password.</string>
+    <string name="login_successful">Login successful.</string>
+    <string name="invalid_username_or_password">Invalid username or password.</string>
+    <string name="please_enter_a_username_and_password_first">
+        Please enter a username and password first.</string>
+    <string name="that_username_already_exists">That username already exists.</string>
+    <string name="account_created_successfully">
+        Account created successfully. You can now log in.</string>
+    <string name="account_could_not_be_created">Account could not be created.</string>
+
+    <string name="inventory_ready">Inventory database ready.</string>
+    <string name="welcome_user">Welcome, %1$s. Inventory database ready.</string>
+    <string name="sms_alert_settings">SMS Alert Settings</string>
+    <string name="total_items_equals_zero">Total items types= 0</string>
+    <string name="total_items_equals">Total items types= %1$d</string>
+    <string name="add_item_with_plus">Add item +</string>
+    <string name="filters">Filters</string>
+    <string name="filter_inventory">Filter Inventory</string>
+    <string name="all_items">All Items</string>
+    <string name="low_stock">Low Stock</string>
+    <string name="out_of_stock">Out of Stock</string>
+    <string name="in_stock">In Stock</string>
+    <string name="search">Search</string>
+    <string name="inventory">Inventory</string>
+    <string name="alerts">Alerts</string>
+    <string name="account">Account</string>
+    <string name="qty_badge">Qty:%1$d</string>
+    <string name="location_value">Location: %1$s</string>
+    <string name="restock">Restock</string>
+    <string name="details">Details</string>
+    <string name="adjust_quantity">Adjust Quantity</string>
+    <string name="new_quantity">New quantity</string>
+    <string name="save_quantity">Save Quantity</string>
+    <string name="no_inventory_cards">
+        No inventory matches this view. Add an item or clear filters.</string>
+    <string name="inventory_item_form">Inventory Item</string>
+    <string name="add_inventory_item">Add Inventory Item</string>
+    <string name="item_details">Item Details</string>
+    <string name="no_item_selected">No item selected.</string>
+    <string name="selected_item">Selected: %1$s</string>
+    <string name="item_name">Item name</string>
+    <string name="sku">SKU</string>
+    <string name="quantity">Quantity</string>
+    <string name="location">Location</string>
+    <string name="notes">Notes</string>
+    <string name="add_item">Add Item</string>
+    <string name="update_item">Update Item</string>
+    <string name="clear">Clear</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="total_items_zero">Total items: 0</string>
+    <string name="total_items_count">Total items: %1$d</string>
+    <string name="no_inventory_items_yet">No inventory items yet. Add an item above.</string>
+    <string name="complete_required_inventory_fields">
+        Please enter item name, SKU, quantity, and location.</string>
+    <string name="quantity_must_be_a_number">Quantity must be a number.</string>
+    <string name="quantity_cannot_be_negative">Quantity cannot be negative.</string>
+    <string name="inventory_item_saved">Inventory item saved.</string>
+    <string name="inventory_item_not_saved">Inventory item could not be saved.</string>
+    <string name="select_item_to_delete">Select an item before deleting.</string>
+    <string name="inventory_item_deleted">Inventory item deleted.</string>
+    <string name="inventory_item_not_deleted">Inventory item could not be deleted.</string>
+    <string name="inventory_item_not_found">Inventory item was not found.</string>
+    <string name="sms_permission_missing_alert_skipped">
+        Low stock detected. SMS permission is not granted, so the app skipped the text alert.</string>
+    <string name="sms_phone_missing_alert_skipped">
+        Low stock detected. Add a phone number in SMS settings to send text alerts.</string>
+    <string name="low_inventory_sms_sent">Low inventory SMS alert sent.</string>
+    <string name="current_quantity">Current quantity: %1$d</string>
+    <string name="restock_amount">Quantity to add</string>
+    <string name="apply_restock">Apply Restock</string>
+    <string name="account_signed_in">Signed in to Warehouse Inventory.</string>
+    <string name="account_signed_in_as">Signed in as %1$s.</string>
+    <string name="back_to_inventory">Back to Inventory</string>
+    <string name="log_out">Log Out</string>
+
+    <string name="sms_inventory_alerts">SMS Inventory Alerts</string>
+    <string name="get_a_text_message_when_an_item_runs_low_or_reaches_zero">
+        Get a text message when an item runs low or reaches zero.</string>
+    <string name="notification_permission">Notification Permission</string>
+    <string name="to_send_sms_alerts_this_app_needs_permission_to_use_text_messaging">
+        To send SMS alerts, this app needs permission to use text messaging.
+        If permission is denied, inventory features still work.</string>
+    <string name="phone_number">Phone number</string>
+    <string name="sms_permission_not_granted">SMS permission not granted.</string>
+    <string name="enable_sms_alerts">Enable SMS Alerts</string>
+    <string name="send_test_alert">Send Test Alert</string>
+    <string name="low_inventory_alert_item_cable_reel_is_down_to_2_units">Preview: Low Inventory
+        Alert - Test item is down to 2 units.</string>
+    <string name="current_response_notifications_disabled_until_permission_is_granted">
+        Current response: Notifications disabled until permission is granted.</string>
+    <string name="current_response_sms_permission_denied_so_alerts_stay_off">
+        Current response: SMS permission denied, so alerts stay off.</string>
+    <string name="sms_permission_granted">SMS permission granted.</string>
+    <string name="current_response_sms_alerts_are_enabled">
+        Current response: SMS alerts are enabled.</string>
+    <string name="back">Back</string>
+</resources>

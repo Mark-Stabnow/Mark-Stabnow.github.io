@@ -1,0 +1,571 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/22.23.2/x64/bin/node",
+      "/home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/playwright.config.ts",
+    "rootDir": "/home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/Mark-Stabnow/CS---360--Mobile--Architecture--and--Programming/commit/8336f692dce2b7e1722e3733acd67e34bb82ff36",
+        "commitHash": "8336f692dce2b7e1722e3733acd67e34bb82ff36",
+        "buildHref": "https://github.com/Mark-Stabnow/CS---360--Mobile--Architecture--and--Programming/actions/runs/36334386906"
+      },
+      "gitCommit": {
+        "shortHash": "8336f69",
+        "hash": "8336f692dce2b7e1722e3733acd67e34bb82ff36",
+        "subject": "Correct browser selectors and metadata-edit test payload",
+        "body": "Correct browser selectors and metadata-edit test payload\n",
+        "author": {
+          "name": "Mark Stabnow",
+          "email": "155677998+Mark-Stabnow@users.noreply.github.com",
+          "time": 1790527503000
+        },
+        "committer": {
+          "name": "Mark Stabnow",
+          "email": "155677998+Mark-Stabnow@users.noreply.github.com",
+          "time": 1790527503000
+        },
+        "branch": "capstone/milestone-three-1000-20260927"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/test-results/browser",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/Mark-Stabnow/CS---360--Mobile--Architecture--and--Programming/commit/8336f692dce2b7e1722e3733acd67e34bb82ff36",
+            "commitHash": "8336f692dce2b7e1722e3733acd67e34bb82ff36",
+            "buildHref": "https://github.com/Mark-Stabnow/CS---360--Mobile--Architecture--and--Programming/actions/runs/36334386906"
+          },
+          "gitCommit": {
+            "shortHash": "8336f69",
+            "hash": "8336f692dce2b7e1722e3733acd67e34bb82ff36",
+            "subject": "Correct browser selectors and metadata-edit test payload",
+            "body": "Correct browser selectors and metadata-edit test payload\n",
+            "author": {
+              "name": "Mark Stabnow",
+              "email": "155677998+Mark-Stabnow@users.noreply.github.com",
+              "time": 1790527503000
+            },
+            "committer": {
+              "name": "Mark Stabnow",
+              "email": "155677998+Mark-Stabnow@users.noreply.github.com",
+              "time": 1790527503000
+            },
+            "branch": "capstone/milestone-three-1000-20260927"
+          },
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "browser.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "browser.spec.ts",
+      "file": "browser.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "manager can sign in and view the desktop inventory",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1221,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:21.975Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-3df4bd19ca77cd21aebc",
+          "file": "browser.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "manager can add and edit an item; duplicate SKU is rejected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1829,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:23.560Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-7b062465053ace2cecee",
+          "file": "browser.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "stock changes update the confirmed count and show a history record",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1179,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:25.405Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-364a59039dbcacff5b49",
+          "file": "browser.spec.ts",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "an offline change survives reload and syncs after reconnection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1455,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:26.595Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-66b536c26ecac313e7ff",
+          "file": "browser.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "viewer controls and the API both block stock changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1115,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:28.062Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-0e0d0abe16716fbcd6d2",
+          "file": "browser.spec.ts",
+          "line": 26,
+          "column": 1
+        },
+        {
+          "title": "phone and tablet layouts keep their content inside the screen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1159,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:29.193Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-7a6893746821c2af18a1",
+          "file": "browser.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "signing out ends the server session and clears this user's cached view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1042,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:30.371Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-3b9047467ea94f7d91d0",
+          "file": "browser.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "loaded-view prefix and exact SKU tools distinguish local misses",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1330,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:31.424Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-1a73a0ba361613c20a95",
+          "file": "browser.spec.ts",
+          "line": 44,
+          "column": 1
+        },
+        {
+          "title": "lowest-stock view rebuilds after a confirmed stock adjustment",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1606,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:32.764Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-0e43be7337c6d359155d",
+          "file": "browser.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "loaded-view indexes discard old names, old SKUs and archived records",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1300,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:34.383Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-3312f54e83aac201625d",
+          "file": "browser.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "loaded-view tools work after offline reload and do not claim warehouse-wide results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1124,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:35.692Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-0289d5dad29d4ac9c9cc",
+          "file": "browser.spec.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "loading another page expands the exact-SKU index without pretending the first page was complete",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1783,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:36.831Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-500875af4f3514b7db2d",
+          "file": "browser.spec.ts",
+          "line": 82,
+          "column": 1
+        },
+        {
+          "title": "loaded-view controls fit a phone and do not grant a viewer write access",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1074,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-27T16:46:38.628Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fbeac1b2decfba2c3acd-4d5f3b56442a46f29ae4",
+          "file": "browser.spec.ts",
+          "line": 94,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-27T16:46:21.387Z",
+    "duration": 18373.802,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

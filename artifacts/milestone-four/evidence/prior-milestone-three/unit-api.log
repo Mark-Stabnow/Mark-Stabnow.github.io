@@ -1,0 +1,248 @@
+
+> warehouse-inventory-capstone@1.0.0 test
+> node --test tests/unit.test.mjs tests/api.test.mjs
+
+TAP version 13
+# Subtest: health responds without a session
+ok 1 - health responds without a session
+  ---
+  duration_ms: 552.66609
+  type: 'test'
+  ...
+# Subtest: inventory requires a session
+ok 2 - inventory requires a session
+  ---
+  duration_ms: 3.838558
+  type: 'test'
+  ...
+# Subtest: an authenticated request can read inventory
+ok 3 - an authenticated request can read inventory
+  ---
+  duration_ms: 3.466741
+  type: 'test'
+  ...
+# Subtest: mutations reject an untrusted origin
+ok 4 - mutations reject an untrusted origin
+  ---
+  duration_ms: 8.284277
+  type: 'test'
+  ...
+# Subtest: mutations require the session CSRF token
+ok 5 - mutations require the session CSRF token
+  ---
+  duration_ms: 4.209617
+  type: 'test'
+  ...
+# Subtest: a viewer cannot add items
+ok 6 - a viewer cannot add items
+  ---
+  duration_ms: 2.749544
+  type: 'test'
+  ...
+# Subtest: a clerk cannot edit item details
+ok 7 - a clerk cannot edit item details
+  ---
+  duration_ms: 7.867149
+  type: 'test'
+  ...
+# Subtest: invalid item input returns a readable error
+ok 8 - invalid item input returns a readable error
+  ---
+  duration_ms: 4.625924
+  type: 'test'
+  ...
+# Subtest: invalid page limits are rejected
+ok 9 - invalid page limits are rejected
+  ---
+  duration_ms: 9.035442
+  type: 'test'
+  ...
+# Subtest: failed login returns a generic error and records a failed attempt
+ok 10 - failed login returns a generic error and records a failed attempt
+  ---
+  duration_ms: 273.886018
+  type: 'test'
+  ...
+# Subtest: login sets an HttpOnly SameSite cookie and does not expose the password hash
+ok 11 - login sets an HttpOnly SameSite cookie and does not expose the password hash
+  ---
+  duration_ms: 274.765577
+  type: 'test'
+  ...
+# Subtest: API responses are not cacheable
+ok 12 - API responses are not cacheable
+  ---
+  duration_ms: 5.118132
+  type: 'test'
+  ...
+# Subtest: unknown API routes return JSON rather than the app shell
+ok 13 - unknown API routes return JSON rather than the app shell
+  ---
+  duration_ms: 2.567512
+  type: 'test'
+  ...
+# Subtest: SKU is normalized before saving
+ok 14 - SKU is normalized before saving
+  ---
+  duration_ms: 0.874708
+  type: 'test'
+  ...
+# Subtest: required item fields cannot be blank
+ok 15 - required item fields cannot be blank
+  ---
+  duration_ms: 0.589899
+  type: 'test'
+  ...
+# Subtest: a stock count cannot be negative
+ok 16 - a stock count cannot be negative
+  ---
+  duration_ms: 0.11153
+  type: 'test'
+  ...
+# Subtest: a stock count must be an integer
+ok 17 - a stock count must be an integer
+  ---
+  duration_ms: 0.094994
+  type: 'test'
+  ...
+# Subtest: a string is not silently accepted as a numeric stock count
+ok 18 - a string is not silently accepted as a numeric stock count
+  ---
+  duration_ms: 0.94788
+  type: 'test'
+  ...
+# Subtest: SKU rejects spaces and punctuation outside its allowed format
+ok 19 - SKU rejects spaces and punctuation outside its allowed format
+  ---
+  duration_ms: 0.133763
+  type: 'test'
+  ...
+# Subtest: notes have a length limit
+ok 20 - notes have a length limit
+  ---
+  duration_ms: 0.140056
+  type: 'test'
+  ...
+# Subtest: editing details cannot overwrite quantity
+ok 21 - editing details cannot overwrite quantity
+  ---
+  duration_ms: 0.128671
+  type: 'test'
+  ...
+# Subtest: stock adjustments need a nonzero change
+ok 22 - stock adjustments need a nonzero change
+  ---
+  duration_ms: 0.448728
+  type: 'test'
+  ...
+# Subtest: stock adjustments need a reason
+ok 23 - stock adjustments need a reason
+  ---
+  duration_ms: 0.394796
+  type: 'test'
+  ...
+# Subtest: negative stock adjustments are valid commands
+ok 24 - negative stock adjustments are valid commands
+  ---
+  duration_ms: 0.170756
+  type: 'test'
+  ...
+# Subtest: a missing or malformed request ID is rejected
+ok 25 - a missing or malformed request ID is rejected
+  ---
+  duration_ms: 0.078752
+  type: 'test'
+  ...
+# Subtest: page size is capped at 100
+ok 26 - page size is capped at 100
+  ---
+  duration_ms: 0.111464
+  type: 'test'
+  ...
+# Subtest: query objects cannot replace search text
+ok 27 - query objects cannot replace search text
+  ---
+  duration_ms: 0.052634
+  type: 'test'
+  ...
+# Subtest: the default page size is 25
+ok 28 - the default page size is 25
+  ---
+  duration_ms: 0.057197
+  type: 'test'
+  ...
+# Subtest: unknown stock filters are rejected
+ok 29 - unknown stock filters are rejected
+  ---
+  duration_ms: 0.096959
+  type: 'test'
+  ...
+# Subtest: password spaces are kept
+ok 30 - password spaces are kept
+  ---
+  duration_ms: 0.085418
+  type: 'test'
+  ...
+# Subtest: password length has upper and lower bounds
+ok 31 - password length has upper and lower bounds
+  ---
+  duration_ms: 0.087894
+  type: 'test'
+  ...
+# Subtest: password hashes use different salts and verify the right password
+ok 32 - password hashes use different salts and verify the right password
+  ---
+  duration_ms: 1052.384058
+  type: 'test'
+  ...
+# Subtest: the queue removes a command only after confirmation
+ok 33 - the queue removes a command only after confirmation
+  ---
+  duration_ms: 0.472408
+  type: 'test'
+  ...
+# Subtest: a lost response keeps the original request ID in the queue
+ok 34 - a lost response keeps the original request ID in the queue
+  ---
+  duration_ms: 0.285287
+  type: 'test'
+  ...
+# Subtest: an expired session pauses the queue
+ok 35 - an expired session pauses the queue
+  ---
+  duration_ms: 0.10428
+  type: 'test'
+  ...
+# Subtest: a rejected adjustment stays visible for review
+ok 36 - a rejected adjustment stays visible for review
+  ---
+  duration_ms: 0.097985
+  type: 'test'
+  ...
+# Subtest: one account cannot send another account's queued change
+ok 37 - one account cannot send another account's queued change
+  ---
+  duration_ms: 0.067506
+  type: 'test'
+  ...
+# Subtest: a failed local cache write does not discard a confirmed request
+ok 38 - a failed local cache write does not discard a confirmed request
+  ---
+  duration_ms: 0.078179
+  type: 'test'
+  ...
+# Subtest: an unconfirmed response does not count as success
+ok 39 - an unconfirmed response does not count as success
+  ---
+  duration_ms: 0.12428
+  type: 'test'
+  ...
+1..39
+# tests 39
+# suites 0
+# pass 39
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2409.631553

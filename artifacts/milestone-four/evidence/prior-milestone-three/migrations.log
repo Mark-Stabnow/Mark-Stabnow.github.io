@@ -1,0 +1,6 @@
+
+> warehouse-inventory-capstone@1.0.0 migrate
+> node tools/migrate.mjs
+
+Applied 001_initial.sql.
+Database is up to date.

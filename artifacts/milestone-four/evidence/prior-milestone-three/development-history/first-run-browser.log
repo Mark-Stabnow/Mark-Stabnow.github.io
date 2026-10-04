@@ -1,0 +1,220 @@
+
+> warehouse-inventory-capstone@1.0.0 test:e2e
+> playwright test
+
+
+Running 13 tests using 1 worker
+
+  ✓   1 tests/browser.spec.ts:10:1 › manager can sign in and view the desktop inventory (1.2s)
+  ✓   2 tests/browser.spec.ts:13:1 › manager can add and edit an item; duplicate SKU is rejected (2.4s)
+  ✓   3 tests/browser.spec.ts:17:1 › stock changes update the confirmed count and show a history record (1.3s)
+  ✓   4 tests/browser.spec.ts:20:1 › an offline change survives reload and syncs after reconnection (1.6s)
+  ✓   5 tests/browser.spec.ts:26:1 › viewer controls and the API both block stock changes (1.1s)
+  ✓   6 tests/browser.spec.ts:30:1 › phone and tablet layouts keep their content inside the screen (1.1s)
+  ✓   7 tests/browser.spec.ts:33:1 › signing out ends the server session and clears this user's cached view (1.1s)
+  ✘   8 tests/browser.spec.ts:44:1 › loaded-view prefix and exact SKU tools distinguish local misses (45.3s)
+  ✘   9 tests/browser.spec.ts:53:1 › lowest-stock view rebuilds after a confirmed stock adjustment (45.1s)
+  ✘  10 tests/browser.spec.ts:64:1 › loaded-view indexes discard old names, old SKUs and archived records (1.6s)
+  ✘  11 tests/browser.spec.ts:76:1 › loaded-view tools work after offline reload and do not claim warehouse-wide results (45.3s)
+  ✘  12 tests/browser.spec.ts:82:1 › loading another page expands the exact-SKU index without pretending the first page was complete (45.2s)
+  ✘  13 tests/browser.spec.ts:94:1 › loaded-view controls fit a phone and do not grant a viewer write access (45.1s)
+
+
+  1) tests/browser.spec.ts:44:1 › loaded-view prefix and exact SKU tools distinguish local misses ──
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Match type', { exact: true })
+
+
+      46 |   await page.getByLabel('Loaded-view search',{exact:true}).fill(' CAT6 ');await expect(page.locator('article')).toHaveCount(2);
+      47 |   await page.getByLabel('Loaded-view search',{exact:true}).fill('at6');await expect(page.locator('article')).toHaveCount(0);await expect(page.getByText('No match in the loaded view.',{exact:false})).toBeVisible();
+    > 48 |   await page.getByLabel('Match type',{exact:true}).selectOption('exact');await page.getByLabel('Loaded-view search',{exact:true}).fill(' cat6-1000-a ');
+         |                                                    ^
+      49 |   await expect(page.locator('article')).toHaveCount(1);await expect(card(page,'Cat6 cable, 1,000 ft box')).toBeVisible();
+      50 |   await page.getByLabel('Loaded-view search',{exact:true}).fill('MISSING-SKU');await expect(page.getByText('Use the warehouse search above to look beyond this view.',{exact:false})).toBeVisible();
+      51 |   await page.getByLabel('Search and order the loaded view',{exact:true}).uncheck();await expect(page.locator('article')).toHaveCount(6);
+        at /home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/tests/browser.spec.ts:48:52
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/browser/browser-loaded-view-prefix-8e506-ls-distinguish-local-misses/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/browser/browser-loaded-view-prefix-8e506-ls-distinguish-local-misses/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser/browser-loaded-view-prefix-8e506-ls-distinguish-local-misses/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser/browser-loaded-view-prefix-8e506-ls-distinguish-local-misses/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) tests/browser.spec.ts:53:1 › lowest-stock view rebuilds after a confirmed stock adjustment ────
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Loaded-view order', { exact: true })
+
+
+      52 | });
+      53 | test('lowest-stock view rebuilds after a confirmed stock adjustment',async({page})=>{
+    > 54 |   await login(page);await enableTools(page);await page.getByLabel('Loaded-view order',{exact:true}).selectOption('lowest');
+         |                                                                                                     ^
+      55 |   const quantities=()=>page.locator('.quantity strong').allTextContents();
+      56 |   let numbers=(await quantities()).map(Number);expect(numbers).toEqual([...numbers].sort((a,b)=>a-b));expect(numbers[0]).toBe(0);
+      57 |   await card(page,'Cat6 cable, 2,000 ft box').getByRole('button',{name:'Details and stock'}).click();
+        at /home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/tests/browser.spec.ts:54:101
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/browser/browser-lowest-stock-view--51ea0--confirmed-stock-adjustment/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/browser/browser-lowest-stock-view--51ea0--confirmed-stock-adjustment/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser/browser-lowest-stock-view--51ea0--confirmed-stock-adjustment/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser/browser-lowest-stock-view--51ea0--confirmed-stock-adjustment/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) tests/browser.spec.ts:64:1 › loaded-view indexes discard old names, old SKUs and archived records 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 400
+
+      67 |   let record=(await created.json()).item;await page.getByRole('button',{name:'Refresh',exact:true}).click();await expect(card(page,'M3 initial item')).toBeVisible();await enableTools(page);
+      68 |   await page.getByLabel('Loaded-view search',{exact:true}).fill('M3 initial');await expect(page.locator('article')).toHaveCount(1);
+    > 69 |   const edited=await page.request.patch(`/api/items/${record.id}`,{headers:h,data:{...record,name:'M3 renamed item',sku:'M3-RENAMED'}});expect(edited.status()).toBe(200);record=(await edited.json()).item;
+         |                                                                                                                                                                 ^
+      70 |   await page.getByRole('button',{name:'Refresh',exact:true}).click();await expect(page.locator('article')).toHaveCount(0);
+      71 |   await page.getByLabel('Match type',{exact:true}).selectOption('exact');await page.getByLabel('Loaded-view search',{exact:true}).fill('M3-INITIAL');await expect(page.locator('article')).toHaveCount(0);
+      72 |   await page.getByLabel('Loaded-view search',{exact:true}).fill('M3-RENAMED');await expect(card(page,'M3 renamed item')).toBeVisible();
+        at /home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/tests/browser.spec.ts:69:161
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/browser/browser-loaded-view-indexe-536bd-d-SKUs-and-archived-records/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/browser/browser-loaded-view-indexe-536bd-d-SKUs-and-archived-records/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser/browser-loaded-view-indexe-536bd-d-SKUs-and-archived-records/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser/browser-loaded-view-indexe-536bd-d-SKUs-and-archived-records/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) tests/browser.spec.ts:76:1 › loaded-view tools work after offline reload and do not claim warehouse-wide results 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Match type', { exact: true })
+
+
+      77 |   await login(page);await waitForSavedView(page);await context.setOffline(true);await page.reload({waitUntil:'domcontentloaded'});
+      78 |   await expect(page.locator('.banner')).toContainText('Offline');await enableTools(page);await page.getByLabel('Loaded-view search',{exact:true}).fill('mag');await expect(page.locator('article')).toHaveCount(1);
+    > 79 |   await page.getByLabel('Match type',{exact:true}).selectOption('exact');await page.getByLabel('Loaded-view search',{exact:true}).fill('NOT-CACHED');
+         |                                                    ^
+      80 |   await expect(page.getByText('Reconnect to search beyond the saved view.',{exact:false})).toBeVisible();await context.setOffline(false);
+      81 | });
+      82 | test('loading another page expands the exact-SKU index without pretending the first page was complete',async({page})=>{
+        at /home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/tests/browser.spec.ts:79:52
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/browser/browser-loaded-view-tools--26280-laim-warehouse-wide-results/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/browser/browser-loaded-view-tools--26280-laim-warehouse-wide-results/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser/browser-loaded-view-tools--26280-laim-warehouse-wide-results/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser/browser-loaded-view-tools--26280-laim-warehouse-wide-results/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) tests/browser.spec.ts:82:1 › loading another page expands the exact-SKU index without pretending the first page was complete 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Match type', { exact: true })
+
+
+      88 |   const second=await(await page.request.get(`/api/items?q=M3%20page&limit=25&after=${first.nextCursor}`)).json();expect(second.items.length).toBe(5);const target=second.items[0];
+      89 |   await page.getByLabel('Search inventory',{exact:true}).fill('M3 page');await expect(page.locator('article')).toHaveCount(25);await enableTools(page);
+    > 90 |   await page.getByLabel('Match type',{exact:true}).selectOption('exact');await page.getByLabel('Loaded-view search',{exact:true}).fill(target.sku);await expect(page.locator('article')).toHaveCount(0);
+         |                                                    ^
+      91 |   await page.getByRole('button',{name:'Load more items'}).click();await expect(card(page,target.name)).toBeVisible();
+      92 |   await expect(page.getByText('30 loaded items.',{exact:false})).toBeVisible();await expect(page.getByRole('button',{name:'Load more items'})).toHaveCount(0);
+      93 | });
+        at /home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/tests/browser.spec.ts:90:52
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/browser/browser-loading-another-pa-5cb44-the-first-page-was-complete/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/browser/browser-loading-another-pa-5cb44-the-first-page-was-complete/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser/browser-loading-another-pa-5cb44-the-first-page-was-complete/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser/browser-loading-another-pa-5cb44-the-first-page-was-complete/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) tests/browser.spec.ts:94:1 › loaded-view controls fit a phone and do not grant a viewer write access 
+
+    Test timeout of 45000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 45000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Loaded-view order', { exact: true })
+
+
+      93 | });
+      94 | test('loaded-view controls fit a phone and do not grant a viewer write access',async({page})=>{
+    > 95 |   await page.setViewportSize({width:390,height:844});await login(page,'viewer');await enableTools(page);await page.getByLabel('Loaded-view order',{exact:true}).selectOption('lowest');
+         |                                                                                                                                                                 ^
+      96 |   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await expect(page.getByRole('button',{name:'Add item',exact:true})).toHaveCount(0);
+      97 |   await mkdir('test-results/screenshots',{recursive:true});await page.screenshot({path:'test-results/screenshots/m3-phone-tools.png',fullPage:true});
+      98 |   const h=await headers(page),response=await page.request.post('/api/items',{headers:h,data:{}});expect(response.status()).toBe(403);
+        at /home/runner/work/CS---360--Mobile--Architecture--and--Programming/CS---360--Mobile--Architecture--and--Programming/capstone/warehouse-pwa/tests/browser.spec.ts:95:161
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/browser/browser-loaded-view-contro-4ef79-grant-a-viewer-write-access/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/browser/browser-loaded-view-contro-4ef79-grant-a-viewer-write-access/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/browser/browser-loaded-view-contro-4ef79-grant-a-viewer-write-access/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/browser/browser-loaded-view-contro-4ef79-grant-a-viewer-write-access/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6 failed
+    tests/browser.spec.ts:44:1 › loaded-view prefix and exact SKU tools distinguish local misses ───
+    tests/browser.spec.ts:53:1 › lowest-stock view rebuilds after a confirmed stock adjustment ─────
+    tests/browser.spec.ts:64:1 › loaded-view indexes discard old names, old SKUs and archived records 
+    tests/browser.spec.ts:76:1 › loaded-view tools work after offline reload and do not claim warehouse-wide results 
+    tests/browser.spec.ts:82:1 › loading another page expands the exact-SKU index without pretending the first page was complete 
+    tests/browser.spec.ts:94:1 › loaded-view controls fit a phone and do not grant a viewer write access 
+  7 passed (4.0m)

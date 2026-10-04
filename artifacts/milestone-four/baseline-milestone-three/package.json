@@ -1,0 +1,42 @@
+{
+  "name": "warehouse-inventory-capstone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12 <23"
+  },
+  "scripts": {
+    "setup": "node tools/setup.mjs",
+    "migrate": "node tools/migrate.mjs",
+    "seed": "node tools/seed.mjs",
+    "build": "tsc --noEmit && vite build && node tools/build-sw.mjs",
+    "start": "node server/index.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "test": "node --test tests/unit.test.mjs tests/api.test.mjs",
+    "test:db": "node --test tests/database.test.mjs",
+    "test:e2e": "playwright test",
+    "check": "npm run build && npm test && npm run test:algorithms && npm run test:db",
+    "test:algorithms": "node --test tests/algorithms.test.mjs",
+    "benchmark": "node tools/benchmark.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "pg": "^8.16.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.1",
+    "supertest": "^7.1.4",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3"
+  }
+}

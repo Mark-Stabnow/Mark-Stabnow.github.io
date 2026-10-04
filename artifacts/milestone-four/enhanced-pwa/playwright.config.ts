@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'tests',testMatch:'browser.spec.ts',fullyParallel:false,workers:1,retries:0,timeout:45000,expect:{timeout:12000},reporter:[['list'],['json',{outputFile:'test-results/browser-results.json'}]],use:{baseURL:'http://localhost:4173',headless:true,screenshot:'only-on-failure',trace:'retain-on-failure'},outputDir:'test-results/browser'});

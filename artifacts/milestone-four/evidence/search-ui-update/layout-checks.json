@@ -1,0 +1,110 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "state": "collapsed",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 80.6875,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 320,
+      "state": "expanded",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 530.71875,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 375,
+      "state": "collapsed",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 61,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 375,
+      "state": "expanded",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 490.390625,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 390,
+      "state": "collapsed",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 61,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 390,
+      "state": "expanded",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 461.75,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 768,
+      "state": "collapsed",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 61,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 768,
+      "state": "expanded",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 257.890625,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 1024,
+      "state": "collapsed",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 61,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 1024,
+      "state": "expanded",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 237.25,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 1440,
+      "state": "collapsed",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 61,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 1440,
+      "state": "expanded",
+      "horizontalOverflow": false,
+      "toggleHeight": 44,
+      "toolsHeight": 237.25,
+      "keyboardFocusVisible": true
+    },
+    {
+      "width": 375,
+      "state": "expanded-text-200-percent",
+      "horizontalOverflow": false
+    },
+    {
+      "state": "prefers-reduced-motion",
+      "chevronTransition": "0s"
+    }
+  ],
+  "scope": "Chromium static JSX renders, not the React runtime or the full app."
+}
