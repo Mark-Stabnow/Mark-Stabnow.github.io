@@ -22,7 +22,6 @@
 <h2>Offline stock changes</h2>
 <p>Offline stock changes are stored in a local queue with stable request IDs. The interface keeps pending changes separate from the confirmed count. When the connection returns, the server checks the request before saving it. Reusing the same request ID prevents a retry from applying the same stock change twice.</p>
 <p>The design intentionally does not copy every Android feature. Adding or editing item metadata still requires a connection, the PWA uses in app stock indicators instead of the original text message feature, and the demo uses seeded accounts instead of public registration.</p>
-<p class="source-note">This narrative follows the completed Milestone Two design description and the corresponding source under <code>artifacts/milestone-four/enhanced-pwa</code>.</p>
 
   </main>
 </body>

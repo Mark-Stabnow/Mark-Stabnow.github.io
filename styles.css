@@ -447,7 +447,6 @@ footer p { margin: 0; }
 .document-page h1 { font-size: clamp(2rem, 5vw, 3.6rem); }
 .document-page h2 { margin-top: 2.4rem; font-size: 1.5rem; }
 .document-page .back-link { display: inline-block; margin-bottom: 2rem; }
-.document-page .source-note { color: var(--muted); font-size: 0.9rem; }
 
 @media (max-width: 900px) {
   .header-inner {

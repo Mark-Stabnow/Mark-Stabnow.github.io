@@ -78,7 +78,6 @@ nav a:hover { text-decoration: underline; }
 .source-number { color: var(--accent); font-variant-numeric: tabular-nums; font-size: .8rem; font-weight: 700; }
 .source-current { border-color: #90add4; }
 .source-row:hover strong { text-decoration: underline; text-underline-offset: .22em; }
-.source-note { font-size: .8rem; line-height: 1.6; margin: 14px 4px 0; }
 .enhancement-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
 .enhancement-card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 26px; display: flex; flex-direction: column; align-items: flex-start; }
 .category-number { color: var(--accent); font-size: .78rem; font-weight: 750; letter-spacing: .08em; margin-bottom: 22px; }
