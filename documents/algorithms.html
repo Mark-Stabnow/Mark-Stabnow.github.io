@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Algorithms and data structures | Mark Stabnow</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="document-page">
+    <a class="back-link" href="../index.html">← Back to ePortfolio</a>
+    <header>
+      <p class="eyebrow">CS 499 · Enhancement Two</p>
+      <h1>Algorithms and data structures</h1>
+    </header>
+    
+<p>The original inventory view searched and sorted a loaded list directly. For the algorithms enhancement I added data structures for three specific jobs: a separate chaining hash map for exact SKU lookup, a trie for prefix matching, and a min heap for lowest stock selection.</p>
+<h2>Loaded view scope</h2>
+<p>The browser builds these structures only over records it has already loaded. Warehouse wide search stays on the API. That matters because an exact lookup miss in the local index does not prove that the SKU is absent from the database. The interface labels these controls as loaded view tools so the implementation does not imply a wider result than it can provide.</p>
+<h2>Correctness and benchmark</h2>
+<p>The benchmark checks that the simple baseline and indexed versions return equivalent answers before timing them. It uses a fixed synthetic 1,000 item data set, three warmup batches, and fifteen measured batches. The recorded medians were 3.801 ms versus 6.457 ms for 200 prefix searches, 1.025 ms versus 0.028 ms for 200 exact SKU lookups, and 38.769 ms versus 1.860 ms for 200 lowest ten stock selections. Building the indexed read model was more expensive, and the 100 update medians were close at 0.360 ms and 0.398 ms.</p>
+<p>The result is useful because the custom trie did not automatically beat the simpler scan. The benchmark is an in memory Node.js measurement. It does not measure network, PostgreSQL, DOM rendering, physical phone latency, memory use, or scaling beyond 1,000 items.</p>
+<h2>What I learned</h2>
+<p>The main lesson was to match the data structure to the operation and include its maintenance cost in the discussion. Fast lookup is only one part of the decision. Build cost, update behavior, data scope, correctness, and how the structure is used by the interface all matter.</p>
+<p class="source-note">Recorded benchmark evidence is under <code>artifacts/milestone-four/evidence/algorithm-benchmark.log</code> and the related JSON output.</p>
+
+  </main>
+</body>
+</html>

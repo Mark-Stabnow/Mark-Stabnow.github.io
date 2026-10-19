@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software design and engineering | Mark Stabnow</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="document-page">
+    <a class="back-link" href="../index.html">← Back to ePortfolio</a>
+    <header>
+      <p class="eyebrow">CS 499 · Enhancement One</p>
+      <h1>Software design and engineering</h1>
+    </header>
+    
+<p>The artifact started as an Android application where screen classes handled several jobs at once: form checks, database calls, filtering, and drawing inventory cards. For the software design enhancement I rebuilt the workflow as a progressive web application using React and TypeScript, an Express API, and PostgreSQL.</p>
+<h2>Separation of responsibilities</h2>
+<p>The React client handles screens and form state. Separate client modules handle API calls, cached inventory, and queued stock changes. On the server, routes check the session and role before passing validated requests to repository code. The repository owns database access and transactions. This gives each part a smaller responsibility and makes it easier to test the behavior without depending on the screen code.</p>
+<h2>Security and roles</h2>
+<p>The enhanced project uses manager, clerk, and viewer roles. Managers can add, edit, archive, and adjust stock. Clerks can record stock changes. Viewers can read inventory and history. Those limits are enforced at the API rather than only by hiding buttons. Passwords use salted scrypt. The implementation also includes account lockout, login request limits, session cookies, and checks against cross site write requests.</p>
+<h2>Offline stock changes</h2>
+<p>Offline stock changes are stored in a local queue with stable request IDs. The interface keeps pending changes separate from the confirmed count. When the connection returns, the server checks the request before saving it. Reusing the same request ID prevents a retry from applying the same stock change twice.</p>
+<p>The design intentionally does not copy every Android feature. Adding or editing item metadata still requires a connection, the PWA uses in app stock indicators instead of the original text message feature, and the demo uses seeded accounts instead of public registration.</p>
+<p class="source-note">This narrative follows the completed Milestone Two design description and the corresponding source under <code>artifacts/milestone-four/enhanced-pwa</code>.</p>
+
+  </main>
+</body>
+</html>
