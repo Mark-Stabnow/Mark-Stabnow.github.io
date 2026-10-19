@@ -22,7 +22,6 @@
 <p>The result is useful because the custom trie did not automatically beat the simpler scan. The benchmark is an in memory Node.js measurement. It does not measure network, PostgreSQL, DOM rendering, physical phone latency, memory use, or scaling beyond 1,000 items.</p>
 <h2>What I learned</h2>
 <p>The main lesson was to match the data structure to the operation and include its maintenance cost in the discussion. Fast lookup is only one part of the decision. Build cost, update behavior, data scope, correctness, and how the structure is used by the interface all matter.</p>
-<p class="source-note">Recorded benchmark evidence is under <code>artifacts/milestone-four/evidence/algorithm-benchmark.log</code> and the related JSON output.</p>
 
   </main>
 </body>

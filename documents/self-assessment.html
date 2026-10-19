@@ -20,7 +20,6 @@
 <p>The algorithms work reinforced that a more complicated structure is not automatically better. I implemented a hash map for exact SKU lookup, a trie for prefix matching, and a min heap for lowest stock selection. On the recorded 1,000 item benchmark, exact SKU lookup and lowest stock selection were faster after the indexes were built, while prefix search was slower than the normalized array scan. The update medians were close enough that I would not claim a meaningful advantage from that measurement alone.</p>
 <p>The database work made preservation and verification just as important as schema design. The Android export excludes account credentials, the importer validates records before writing, and the migration keeps source IDs and timestamp text so imported records can be traced back to the original data. The reconciliation view reports quantity disagreements instead of silently changing them. I also learned to separate completed checks from checks that still need the right environment.</p>
 <p>The finished portfolio gives me something I can walk through from the original source to the enhanced code and the evidence that supports it. I can explain what I changed, where the design still has limits, and why I made those tradeoffs without turning the project into something bigger than it is.</p>
-<p class="source-note">This assessment is based on the CS 499 code review, enhancement narratives, implementation notes, and verification evidence in this repository.</p>
 
   </main>
 </body>
