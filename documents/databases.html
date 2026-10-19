@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Databases | Mark Stabnow</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="document-page">
+    <a class="back-link" href="../index.html">← Back to ePortfolio</a>
+    <header>
+      <p class="eyebrow">CS 499 · Enhancement Three</p>
+      <h1>Databases</h1>
+    </header>
+    
+<p>The Android version used SQLite for accounts and inventory. Quantity updates replaced the current count and the upgrade path could drop existing tables. The database enhancement focused on moving the original inventory data forward without pretending the Android app had history it never stored.</p>
+<h2>Import and preservation</h2>
+<p>A Python exporter reads inventory records from the Android database without exporting usernames or password hashes. A Node importer validates the exported file before saving anything. It reports missing fields, invalid quantities, and duplicate SKUs for review. The import keeps the original item IDs linked to the new records and preserves the original timestamp text because the Android timestamps do not include a timezone.</p>
+<p>Category and reorder level are supplied during import because the original Android database did not contain those fields. Each imported item receives an opening count. Earlier stock adjustments cannot be reconstructed because the original application did not save them.</p>
+<h2>Migration and reconciliation</h2>
+<p>The database changes are added in a second SQL migration so the first migration remains intact. The enhancement adds source provenance, constraints, indexes, and a reconciliation view. The view compares the stored quantity with the total from stock history and flags disagreements for review instead of changing the quantity automatically. A zero opening count and a missing history record are handled as different conditions.</p>
+<h2>Verification status</h2>
+<p>The preparation record reports 99 named dependency free automated tests passed with 0 failed and 0 skipped. It includes a real SQLite to JSON to Node pipeline for exactly 1,000 items, exporter tests, source preservation checks, and the algorithm benchmark.</p>
+<p>The same record says the environment did not have PostgreSQL, Docker, <code>pg_dump</code>, <code>pg_restore</code>, or the remaining build dependencies. The full TypeScript build, PostgreSQL integration suites, migration and restore checks, SQL query timing, and Chromium browser regression suite were not run there. I am keeping those items marked as not run rather than treating them as passing evidence.</p>
+<p class="source-note">The submitted Milestone Four Word narrative and the verification record are available under <code>artifacts/milestone-four</code>.</p>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Milestone One code review | Mark Stabnow</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="document-page">
+    <a class="back-link" href="../index.html">← Back to ePortfolio</a>
+    <header>
+      <p class="eyebrow">CS 499 · Milestone One</p>
+      <h1>Milestone One code review</h1>
+    </header>
+    
+<p>The Warehouse Inventory App began as an Android project from CS 360. The original application included account creation and login, an inventory grid, item creation and deletion, quantity changes, and zero inventory alerts. The code review used that working version as the starting point for the capstone.</p>
+<h2>What the review found</h2>
+<p>The Android screen classes combined UI work with validation, database calls, and quantity rules. Persistence used hand written SQLite queries. Credentials were stored without the protections I would want in a shared application. Search and sort worked over the loaded list, quantity updates overwrote the previous value, and there was no tested schema migration path or automated test suite.</p>
+<p>Those problems became the basis for the three enhancement areas instead of being hidden. Software design focused on separating the client, API, and database responsibilities. Algorithms focused on exact SKU lookup, prefix search, lowest stock selection, and the cost of maintaining indexes. Databases focused on preserving data, stock history, constraints, migrations, and reconciliation.</p>
+<h2>Review video</h2>
+<p><a href="https://youtu.be/SuyHdA30mlE" rel="noopener noreferrer">Watch the informal code review on YouTube</a>.</p>
+<p class="source-note">The original written review is represented by the source and planning material in the Milestone Four repository package. The video link is the one supplied for the capstone.</p>
+
+  </main>
+</body>
+</html>

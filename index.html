@@ -3,109 +3,285 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mark Stabnow's computer science ePortfolio. Review the Warehouse Inventory capstone, original and enhanced code, database narrative, and verification evidence.">
-  <meta name="theme-color" content="#17304f">
-  <title>Mark Stabnow | Computer Science ePortfolio</title>
-  <link rel="stylesheet" href="assets/portfolio.css">
+  <meta name="description" content="Mark Stabnow's CS 499 computer science capstone ePortfolio, centered on the Warehouse Inventory App and its three enhancement areas.">
+  <title>Mark Stabnow | CS 499 ePortfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Mark Stabnow, back to top">
+    <div class="header-inner">
+      <a class="site-name" href="#top" aria-label="Mark Stabnow, back to top">
         <span class="monogram" aria-hidden="true">MS</span>
-        <span>Mark Stabnow<span class="brand-detail">Computer Science ePortfolio</span></span>
+        <span>Mark Stabnow</span>
       </a>
-      <nav aria-label="Main navigation">
+      <nav aria-label="Primary navigation">
+        <a href="#assessment">Self assessment</a>
         <a href="#project">Project</a>
         <a href="#enhancements">Enhancements</a>
-        <a href="#evidence">Evidence</a>
-        <a href="#about">About</a>
+        <a href="#review">Code review</a>
+        <a href="#artifacts">Artifacts</a>
       </nav>
     </div>
   </header>
 
-  <main id="main" tabindex="-1">
-    <div id="top" class="container">
-      <section class="hero" aria-labelledby="intro-title">
-        <div class="hero-copy">
-          <p class="eyebrow">SNHU / CS 499 / SOFTWARE ENGINEERING</p>
-          <h1 id="intro-title">Mark Stabnow</h1>
-          <p class="hero-subtitle">Computer science. <br>Field experience.</p>
-          <p class="hero-description">I work with access control, cameras, and networked equipment. I’m building on that experience with software development and working toward a systems integration engineering role.</p>
-          <a class="button button-primary" href="#project">Explore my capstone <span aria-hidden="true">↓</span></a>
-        </div>
-        <aside class="review-card" aria-labelledby="review-title">
-          <div class="review-topline"><span class="eyebrow">START HERE</span><span class="tag">Milestone Four</span></div>
-          <h2 id="review-title">Review the project</h2>
-          <p>Code, explanation, and evidence in one place.</p>
-          <a class="review-link" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/tree/main/artifacts/milestone-four/enhanced-pwa"><span><strong>Enhanced source code</strong><small>Current Warehouse Inventory PWA</small></span><span aria-hidden="true">↗</span></a>
-          <a class="review-link" href="artifacts/milestone-four/CS499_Milestone_Four_Narrative_Mark_Stabnow_Formatted.docx" download><span><strong>Database narrative</strong><small>Word document · .docx</small></span><span aria-hidden="true">↓</span></a>
-          <a class="review-link" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/blob/main/artifacts/milestone-four/evidence/VERIFICATION.md"><span><strong>Verification record</strong><small>Recorded results and remaining checks</small></span><span aria-hidden="true">↗</span></a>
-        </aside>
-      </section>
+  <main id="main">
+    <section class="intro" id="top" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="eyebrow">CS 499 · Computer Science Capstone · 2026</p>
+        <h1 id="intro-title">Computer science ePortfolio</h1>
+        <p class="lede">This portfolio follows one project from its original Android version through a full stack web enhancement. The work gave me a practical way to compare design choices, data structures, database changes, security controls, and testing against the same inventory workflow.</p>
+      </div>
+      <aside class="intro-note" aria-label="Portfolio focus">
+        <p><strong>Primary artifact</strong><br>Warehouse Inventory App</p>
+        <p><strong>Original</strong><br>Android, Java, SQLite</p>
+        <p><strong>Enhanced</strong><br>React, TypeScript, Express, PostgreSQL</p>
+      </aside>
+    </section>
 
-      <section id="project" class="section" aria-labelledby="project-title">
-        <div class="section-heading"><div><p class="eyebrow">FEATURED PROJECT</p><h2 id="project-title">Warehouse Inventory</h2></div><span class="section-caption">CS 360 original · CS 499 enhancements</span></div>
-        <div class="project-panel">
-          <div class="project-copy">
-            <h3>From an Android app to a shared inventory system.</h3>
-            <p>I started with the inventory app I built in CS 360. For my capstone, I kept its item and stock workflows and expanded them into a web application.</p>
-            <p>The current source includes a React and TypeScript interface, an Express API, PostgreSQL storage, and an offline queue for stock changes. Milestone Four adds inventory import tools and database checks.</p>
-            <ul class="tech-list" aria-label="Project technologies"><li>React + TypeScript</li><li>Express</li><li>PostgreSQL</li><li>Docker</li></ul>
-            <a class="text-link" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/blob/main/artifacts/milestone-four/README.md">Read the project overview <span aria-hidden="true">↗</span></a>
+    <section class="section" id="assessment" aria-labelledby="assessment-title">
+      <div class="section-heading">
+        <p class="eyebrow">Professional self assessment</p>
+        <h2 id="assessment-title">What I learned from the capstone</h2>
+      </div>
+      <div class="reading-width">
+        <p>The capstone pulled several parts of the computer science program into one project. I had to look at the same application as a user interface, an API, a set of algorithms, a database, and a security problem. That was more useful to me than treating each topic as an isolated assignment because a change in one layer could affect the others.</p>
+
+        <p>Communication became part of the technical work. The code review had to explain the original Android project to a peer or manager. The enhancement narratives had to explain what changed, why I chose it, and what the evidence actually showed. I also had to keep the limits visible. For example, a loaded view search in the browser is not the same thing as a warehouse wide search, and a local benchmark does not prove production performance.</p>
+
+        <p>The software engineering work made separation of responsibilities more concrete. The original Android screen classes handled form checks, database work, filtering, and drawing the interface. In the PWA, the browser handles the interface and local state, the Express API handles sessions and validated requests, and repository code handles PostgreSQL access and transactions. The offline stock queue also forced me to think about failure instead of only the normal path. A stable request ID is needed because the server can accept a change even when the browser never receives the response.</p>
+
+        <p>The algorithms work reinforced that a more complicated structure is not automatically better. I implemented a hash map for exact SKU lookup, a trie for prefix matching, and a min heap for lowest stock selection. On the recorded 1,000 item benchmark, exact SKU lookup and lowest stock selection were faster after the indexes were built, while prefix search was slower than the normalized array scan. That result is more useful than claiming every custom structure improved performance.</p>
+
+        <p>The database work made preservation and verification just as important as schema design. The Android export excludes account credentials, the importer validates records before writing, and the migration keeps source IDs and timestamp text so imported records can be traced back to the original data. The reconciliation view reports quantity disagreements instead of silently changing them. I also learned to separate completed checks from checks that still need the right environment.</p>
+
+        <p>The finished portfolio gives me something I can walk through from the original source to the enhanced code and the evidence that supports it. I can explain what I changed, where the design still has limits, and why I made those tradeoffs without turning the project into something bigger than it is.</p>
+        <p><a href="documents/self-assessment.html">Open the self assessment as its own page</a></p>
+      </div>
+    </section>
+
+    <section class="section project-section" id="project" aria-labelledby="project-title">
+      <div class="section-heading">
+        <p class="eyebrow">Primary artifact</p>
+        <h2 id="project-title">Warehouse Inventory App</h2>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-copy">
+          <p>The original artifact was created in CS 360 as an Android application. It included account login, inventory cards, search, quantity changes, restocking, and text alert settings. Data was stored locally with SQLite.</p>
+          <p>For CS 499 I rebuilt the inventory workflow as a progressive web app. The browser client uses React and TypeScript. An Express API handles sessions, validation, permissions, and write requests. PostgreSQL stores inventory, stock history, audit records, and migration state. The project also includes an offline stock queue, loaded view indexes, import tooling, and automated checks.</p>
+          <p>The goal was not a feature for feature copy. I kept the warehouse workflow and changed the design where the original structure made testing, disconnected use, or data history difficult.</p>
+        </div>
+        <dl class="project-facts">
+          <div><dt>Original course</dt><dd>CS 360 Mobile Architecture and Programming</dd></div>
+          <div><dt>Capstone course</dt><dd>CS 499 Computer Science Capstone</dd></div>
+          <div><dt>Roles</dt><dd>Manager, clerk, viewer</dd></div>
+          <div><dt>Client</dt><dd>React and TypeScript PWA</dd></div>
+          <div><dt>Server</dt><dd>Express API with PostgreSQL</dd></div>
+        </dl>
+      </div>
+
+      <div class="architecture" role="img" aria-label="Architecture flow from React and TypeScript browser client, through an Express API, to PostgreSQL. IndexedDB supports cached inventory and queued stock changes in the browser.">
+        <section>
+          <span>Browser</span>
+          <strong>React + TypeScript</strong>
+          <p>Interface, cached inventory, queued stock changes</p>
+          <small>IndexedDB supports disconnected work</small>
+        </section>
+        <div class="architecture-arrow" aria-hidden="true">→</div>
+        <section>
+          <span>API</span>
+          <strong>Express</strong>
+          <p>Sessions, validation, permissions, request IDs</p>
+          <small>Routes pass accepted work to the repository</small>
+        </section>
+        <div class="architecture-arrow" aria-hidden="true">→</div>
+        <section>
+          <span>Database</span>
+          <strong>PostgreSQL</strong>
+          <p>Inventory, stock history, audit data, migrations</p>
+          <small>Transactions keep related writes together</small>
+        </section>
+      </div>
+
+      <div class="comparison" aria-labelledby="comparison-title">
+        <h3 id="comparison-title">Before and after</h3>
+        <div class="comparison-columns">
+          <section>
+            <h4>Original Android project</h4>
+            <ul>
+              <li>Java screen classes with UI and data work mixed together</li>
+              <li>SQLite database on the device</li>
+              <li>Quantity stored as the current value without a separate history</li>
+              <li>Search over the in memory inventory list</li>
+              <li>Manual verification on the emulator</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Enhanced PWA</h4>
+            <ul>
+              <li>React and TypeScript client with a separate Express API</li>
+              <li>PostgreSQL persistence, stock history, audit records, and migrations</li>
+              <li>Server side permission checks and salted scrypt password hashing</li>
+              <li>Offline stock queue with stable request IDs and retry protection</li>
+              <li>Automated unit, import, database, and browser test code in the project</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="screenshot-strip" aria-label="Application screenshots">
+        <figure class="screenshot screenshot-wide">
+          <img src="artifacts/milestone-four/evidence/prior-milestone-three/browser-results/screenshots/desktop-inventory.png" alt="Desktop inventory view with search, filters, item cards, and stock controls.">
+          <figcaption>Desktop inventory view from the recorded Milestone Three browser evidence.</figcaption>
+        </figure>
+        <figure class="screenshot screenshot-phone">
+          <img src="artifacts/milestone-four/evidence/prior-milestone-three/browser-results/screenshots/m3-phone-tools.png" alt="Phone layout showing loaded view search and ordering tools above inventory cards.">
+          <figcaption>The loaded view tools on a narrow phone layout.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="enhancements" aria-labelledby="enhancements-title">
+      <div class="section-heading">
+        <p class="eyebrow">Three enhancement areas</p>
+        <h2 id="enhancements-title">What changed and what I learned</h2>
+      </div>
+
+      <article class="enhancement" id="software-engineering">
+        <div class="enhancement-number" aria-hidden="true">01</div>
+        <div>
+          <p class="eyebrow">Software design and engineering</p>
+          <h3>Move responsibilities out of the screen code</h3>
+          <p>The original Android project put form checks, database calls, filtering, and UI work in the same screen classes. I rebuilt the workflow as a React and TypeScript client talking to an Express API. Client modules handle API calls, cached inventory, and queued stock changes. Server routes check the session and permission before validated requests reach repository and transaction code.</p>
+          <p>The hardest part was the stock count when a connection drops. A browser can show a local action before the server accepts it, and the server can accept a request even if the response never makes it back. I used a stable request ID so retries cannot apply the same stock change twice. Pending changes stay separate from the confirmed count.</p>
+          <p>Security changes include salted scrypt password hashing, timed account lockout, login request limits, session cookies, cross site write checks, and API level role checks. Managers can manage items and stock, clerks can record stock changes, and viewers remain read only.</p>
+          <p class="outcome-line"><strong>Course outcome evidence:</strong> software architecture, testing, communication, and security. These protections are specific to this course project and are not a claim that the application is ready for a real warehouse.</p>
+          <p><a href="documents/software-design.html">Read the software design narrative</a></p>
+        </div>
+      </article>
+
+      <article class="enhancement" id="algorithms">
+        <div class="enhancement-number" aria-hidden="true">02</div>
+        <div>
+          <p class="eyebrow">Algorithms and data structures</p>
+          <h3>Add local indexes without pretending they search the whole warehouse</h3>
+          <p>I implemented a separate chaining hash map for exact SKU lookup, a trie for prefix matching, and a min heap for lowest stock selection. An InventoryIndex coordinates the structures and rejects duplicate SKU updates without damaging the existing index state. The browser builds those indexes only over records that have already been loaded.</p>
+          <p>I kept warehouse wide search on the API. The local controls are labeled as loaded view tools, and a local miss does not claim that the SKU is missing from the warehouse. That distinction became part of the algorithm design, not just a UI label.</p>
+
+          <div class="results-table-wrap">
+            <table>
+              <caption>Recorded 1,000 item in memory benchmark from October 4, 2026. Values are median milliseconds per complete batch.</caption>
+              <thead>
+                <tr><th scope="col">Task</th><th scope="col">Simple baseline</th><th scope="col">Indexed</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Build read model</th><td>0.049</td><td>3.608</td></tr>
+                <tr><th scope="row">Prefix search, 200 operations</th><td>3.801</td><td>6.457</td></tr>
+                <tr><th scope="row">Exact SKU, 200 operations</th><td>1.025</td><td>0.028</td></tr>
+                <tr><th scope="row">Lowest 10 stock, 200 operations</th><td>38.769</td><td>1.860</td></tr>
+                <tr><th scope="row">100 stock updates</th><td>0.360</td><td>0.398</td></tr>
+              </tbody>
+            </table>
           </div>
-          <div class="source-versions" aria-label="Project versions">
-            <a class="source-row" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/tree/main/artifacts/milestone-four/original-android"><span class="source-number" aria-hidden="true">01</span><span><strong>Original Android app</strong><small>Java and SQLite coursework</small></span><span aria-hidden="true">↗</span></a>
-            <a class="source-row" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/tree/main/artifacts/milestone-four/baseline-milestone-three"><span class="source-number" aria-hidden="true">02</span><span><strong>Milestone Three baseline</strong><small>The version before the database enhancement</small></span><span aria-hidden="true">↗</span></a>
-            <a class="source-row source-current" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/tree/main/artifacts/milestone-four/enhanced-pwa"><span class="source-number" aria-hidden="true">03</span><span><strong>Milestone Four source</strong><small>Database tools and updated search panel</small></span><span aria-hidden="true">↗</span></a>
-            <p class="source-note">This site presents the portfolio. Run the application with Docker using the <a href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/blob/main/artifacts/milestone-four/enhanced-pwa/README.md">local setup instructions</a>.</p>
-          </div>
+          <p>The benchmark was useful because it did not give every custom structure a win. At this data size the trie prefix search was slower than the normalized scan, while exact SKU lookup and lowest stock selection were faster after the indexes were built. The update medians were close. This was a Node.js in memory benchmark, not a network, database, DOM, or physical device test.</p>
+          <p class="outcome-line"><strong>Course outcome evidence:</strong> algorithm selection, complexity analysis, correctness checks, and measured tradeoffs instead of assuming the more complex structure is always better.</p>
+          <p><a href="documents/algorithms.html">Read the algorithms and data structures narrative</a></p>
         </div>
-      </section>
+      </article>
 
-      <section id="enhancements" class="section" aria-labelledby="enhancements-title">
-        <div class="section-heading"><div><p class="eyebrow">THREE CATEGORIES / ONE ARTIFACT</p><h2 id="enhancements-title">The enhancements</h2></div></div>
-        <div class="enhancement-grid">
-          <article class="enhancement-card">
-            <span class="category-number" aria-hidden="true">01</span>
-            <h3>Software design<br>and engineering</h3>
-            <p>I separated the interface, API, and database operations. The web version adds shared access and handles pending offline stock changes.</p>
-            <a class="text-link" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/blob/main/artifacts/milestone-four/enhanced-pwa/docs/architecture.md">Architecture and design <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="enhancement-card">
-            <span class="category-number" aria-hidden="true">02</span>
-            <h3>Algorithms and<br>data structures</h3>
-            <p>A trie handles prefix search, a map handles exact SKU lookup, and a min-heap orders stock. These controls operate on the loaded view.</p>
-            <a class="text-link" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/blob/main/artifacts/milestone-four/enhanced-pwa/docs/algorithms.md">Algorithms and trade-offs <span aria-hidden="true">↗</span></a>
-          </article>
-          <article class="enhancement-card">
-            <span class="category-number" aria-hidden="true">03</span>
-            <h3>Databases</h3>
-            <p>I added a numbered SQL migration, an Android inventory import process, and a report that checks stored quantities against stock history.</p>
-            <a class="text-link" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/blob/main/artifacts/milestone-four/enhanced-pwa/docs/milestone-four-database.md">Database enhancement <span aria-hidden="true">↗</span></a>
-          </article>
+      <article class="enhancement" id="databases">
+        <div class="enhancement-number" aria-hidden="true">03</div>
+        <div>
+          <p class="eyebrow">Databases</p>
+          <h3>Preserve the original data and make stock history checkable</h3>
+          <p>The original Android database overwrote quantities and its upgrade path dropped existing tables. For the database enhancement I added a Python exporter that reads the Android inventory table without exporting usernames or password hashes. A Node importer validates the exported data, reports missing fields, invalid quantities, and duplicate SKUs, and previews the changes before writing.</p>
+          <p>The import keeps the original item IDs linked to the new records and preserves the Android timestamp text instead of inventing a timezone. Category and reorder level are supplied during import because those fields did not exist in the original database. Each accepted item gets an opening stock record because the Android app did not have earlier stock history to recover.</p>
+          <p>A second SQL migration adds import provenance, constraints, indexes, and a reconciliation view without rewriting the first migration. The reconciliation check compares the stored quantity with the total from stock history and reports disagreements instead of silently changing data.</p>
+
+          <aside class="verification-note">
+            <h4>Verification status</h4>
+            <p>The Milestone Four preparation record reports 99 named dependency free automated tests passed with 0 failed and 0 skipped. It also records a real SQLite to JSON to Node mapping pipeline for exactly 1,000 items, along with source preservation and syntax checks.</p>
+            <p>The same record is explicit about what was not run in that environment: the full TypeScript build, PostgreSQL integration suites, migration and restore checks, SQL query timing, and the 13 Chromium browser workflow tests. I am keeping that distinction visible instead of treating planned checks as completed evidence.</p>
+          </aside>
+
+          <p class="outcome-line"><strong>Course outcome evidence:</strong> migration design, transactions, constraints, import validation, source preservation, and privacy of account data.</p>
+          <p><a href="documents/databases.html">Read the database narrative</a></p>
         </div>
-      </section>
+      </article>
 
-      <section id="evidence" class="section" aria-labelledby="evidence-title">
-        <div class="section-heading"><div><p class="eyebrow">RESULTS WITH THEIR LIMITS</p><h2 id="evidence-title">Testing evidence</h2></div><span class="section-caption">Source record: October 4, 2026</span></div>
-        <p class="section-intro">These results come from the committed Milestone Four evidence. They are not live test results or a claim that the full application suite has passed.</p>
-        <div class="evidence-list">
-          <article class="evidence-row"><div><h3>Local automated checks</h3><p>The record reports 90 Node tests and 9 SQLite export tests passing.</p></div><span class="status status-recorded">99 recorded passes</span><a href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/blob/main/artifacts/milestone-four/evidence/VERIFICATION.md">Read test record <span aria-hidden="true">↗</span></a></article>
-          <article class="evidence-row"><div><h3>Algorithm benchmark</h3><p>In-memory comparisons use 1,000 synthetic items. These are not PostgreSQL or phone timings.</p></div><span class="status status-recorded">Recorded measurement</span><a href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/blob/main/artifacts/milestone-four/evidence/algorithm-benchmark/benchmark-1000.md">View benchmark <span aria-hidden="true">↗</span></a></article>
-          <article class="evidence-row"><div><h3>Full application verification</h3><p>Docker, PostgreSQL, production-build, and live browser checks remain unconfirmed for this revision.</p></div><span class="status status-pending">Further checks needed</span><a href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io/blob/main/artifacts/milestone-four/evidence/search-ui-update/RUN_STATUS.json">View recorded status <span aria-hidden="true">↗</span></a></article>
+      <figure class="wide-figure compact-figure">
+        <img src="artifacts/milestone-four/evidence/prior-milestone-three/browser-results/screenshots/offline-queue.png" alt="Inventory application in offline mode with a pending stock change waiting for server confirmation.">
+        <figcaption>An offline stock change remains pending until synchronization can confirm the server result.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section review-section" id="review" aria-labelledby="review-title">
+      <div class="section-heading">
+        <p class="eyebrow">Milestone One</p>
+        <h2 id="review-title">Informal code review</h2>
+      </div>
+      <div class="review-layout">
+        <div>
+          <p>The code review walks through the existing Android artifact, identifies problems in software design, algorithms, database structure, testing, and security, and explains the planned enhancements. The point of the review was to establish the before version clearly enough that the later changes could be compared against it.</p>
+          <p class="link-row">
+            <a class="text-button" href="https://youtu.be/SuyHdA30mlE" rel="noopener noreferrer">Watch the code review on YouTube</a>
+            <a href="documents/code-review.html">Read the written companion</a>
+          </p>
         </div>
-        <p class="evidence-note">Earlier Milestone Three results stay in their own folder. They do not establish that the Milestone Four changes pass the same checks.</p>
-      </section>
+        <blockquote>
+          <p>The original app was a working course project, but the review showed where its shortcuts became design, security, algorithm, and database problems once the project was treated as a shared inventory system.</p>
+        </blockquote>
+      </div>
+    </section>
 
-      <section id="about" class="section about-section" aria-labelledby="about-title">
-        <div class="about-copy"><p class="eyebrow">ABOUT MY WORK</p><h2 id="about-title">A practical reason to build software.</h2><p>In the field, I spend time figuring out whether a problem comes from wiring, configuration, or communication between systems. I want to bring that troubleshooting experience into software development.</p><p>With this project, I’m working on preserving inventory records, explaining changes, and leaving setup instructions another person can follow.</p><a class="text-link" href="https://github.com/Mark-Stabnow/Mark-Stabnow.github.io">Visit the portfolio repository <span aria-hidden="true">↗</span></a></div>
-        <aside class="portfolio-status" aria-labelledby="portfolio-status-title"><p class="eyebrow">PORTFOLIO STATUS</p><h3 id="portfolio-status-title">Work still to publish</h3><p>The database narrative and project files are available above. The following are not linked in this portfolio yet:</p><ul><li>Professional self-assessment</li><li>Code review video</li><li>Separate software design and algorithms narratives</li></ul><p class="small">Final portfolio review and updated application test evidence also remain.</p></aside>
-      </section>
-    </div>
+    <section class="section" id="artifacts" aria-labelledby="artifacts-title">
+      <div class="section-heading">
+        <p class="eyebrow">Source and supporting material</p>
+        <h2 id="artifacts-title">Artifacts</h2>
+      </div>
+      <p class="reading-width">The repository keeps the original Android source, the Milestone Three PWA baseline, the Milestone Four enhanced PWA, and the verification evidence together so the before and after versions can be inspected without relying on screenshots alone.</p>
+
+      <div class="artifact-list">
+        <article>
+          <h3>Original Android artifact</h3>
+          <p>CS 360 Java and SQLite project used as the before version.</p>
+          <p><a href="artifacts/milestone-four/original-android/">Browse source</a></p>
+        </article>
+        <article>
+          <h3>Milestone Three baseline</h3>
+          <p>The PWA state before the database enhancement.</p>
+          <p><a href="artifacts/milestone-four/baseline-milestone-three/">Browse source</a></p>
+        </article>
+        <article>
+          <h3>Enhanced PWA</h3>
+          <p>React and TypeScript client, Express API, PostgreSQL migrations, algorithms, import tools, and tests.</p>
+          <p><a href="artifacts/milestone-four/enhanced-pwa/">Browse source</a></p>
+        </article>
+        <article>
+          <h3>Verification evidence</h3>
+          <p>Recorded checks, benchmark output, preservation evidence, and the limits of the preparation environment.</p>
+          <p><a href="artifacts/milestone-four/evidence/VERIFICATION.md">Read verification record</a></p>
+        </article>
+      </div>
+
+      <div class="documents" aria-labelledby="documents-title">
+        <h3 id="documents-title">Portfolio writing</h3>
+        <ul>
+          <li><a href="documents/self-assessment.html">Professional self assessment</a></li>
+          <li><a href="documents/code-review.html">Milestone One code review companion</a></li>
+          <li><a href="documents/software-design.html">Software design and engineering narrative</a></li>
+          <li><a href="documents/algorithms.html">Algorithms and data structures narrative</a></li>
+          <li><a href="documents/databases.html">Database narrative</a></li>
+          <li><a href="artifacts/milestone-four/CS499_Milestone_Four_Narrative_Mark_Stabnow_Formatted.docx">Milestone Four submitted Word document</a></li>
+        </ul>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-inner"><p><strong>Mark Stabnow</strong><span>CS 499 · Computer Science Capstone</span></p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+  <footer>
+    <p>Mark Stabnow · CS 499 Computer Science Capstone · Southern New Hampshire University · 2026</p>
+  </footer>
 </body>
 </html>
